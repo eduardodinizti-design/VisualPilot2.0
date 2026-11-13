@@ -1,0 +1,125 @@
+{
+  "scope": "Six whole-label masks from four real sources. F/C, Check, Fold, Raise enabled only after source-disjoint checks. Bare Call and Bet use OCR; variable amounts use OCR.",
+  "templates": [
+    {
+      "label": "F/C",
+      "source": "_4528A8B5-F81C-4078-A8DB-C7ADBD91C311__85ee615d.png",
+      "source_sha256": "85ee615d31918032b5782e88ed0e9370ec1c1f28b451457ed2f7dcba66e49c09",
+      "table_box": [
+        674,
+        100,
+        703,
+        1237
+      ],
+      "button_box": [
+        14,
+        1157,
+        218,
+        66
+      ],
+      "template_sha256": "6548da321fdffcc9d772c2112d79c8fdba9315df3add41f2b391e8d2b5f01fc8",
+      "basis": "Source text visually checked; whole text mask, no font rendering",
+      "file": "F_C.png"
+    },
+    {
+      "label": "Check",
+      "source": "_3A75F7DE-7229-4137-BD19-4AF5AE363948__d560bf0f.png",
+      "source_sha256": "d560bf0fd1828a797fbeae678793e8412403267cb53817260bcab7464356da28",
+      "table_box": [
+        705,
+        225,
+        703,
+        1237
+      ],
+      "button_box": [
+        242,
+        1158,
+        219,
+        65
+      ],
+      "template_sha256": "511c0025069ebb04cf6ceb34c7fb1893dc556910f76915faad17f6ba064244db",
+      "basis": "Source text visually checked; whole text mask, no font rendering",
+      "file": "Check.png"
+    },
+    {
+      "label": "Fold",
+      "source": "_E59537C2-2CA7-4FB2-9B22-728875057AAB__5c7b5161.png",
+      "source_sha256": "5c7b5161179073429b030a9bc8ea42e4c1ac6e70a87a4d2ffd7a069f494d022d",
+      "table_box": [
+        581,
+        38,
+        570,
+        1004
+      ],
+      "button_box": [
+        11,
+        940,
+        178,
+        53
+      ],
+      "template_sha256": "3da922775b7178185f1e033c28c0f0d1dd6537172f70286f20910f925b0b9453",
+      "basis": "Source text visually checked; whole text mask, no font rendering",
+      "file": "Fold.png"
+    },
+    {
+      "label": "Raise",
+      "source": "_E59537C2-2CA7-4FB2-9B22-728875057AAB__5c7b5161.png",
+      "source_sha256": "5c7b5161179073429b030a9bc8ea42e4c1ac6e70a87a4d2ffd7a069f494d022d",
+      "table_box": [
+        581,
+        38,
+        570,
+        1004
+      ],
+      "button_box": [
+        382,
+        940,
+        177,
+        53
+      ],
+      "template_sha256": "f9ec9690c21aefa4d69c1276d67350657486686f06ad00e337d7366567eada9a",
+      "basis": "Source text visually checked; whole text mask, no font rendering",
+      "file": "Raise.png"
+    },
+    {
+      "label": "Fold",
+      "file": "Fold_large.png",
+      "source": "_72432B1C-F9F9-454A-A5D8-7DBE7A0E326A__aff0428c.png",
+      "source_sha256": "aff0428c7dd42730eb2978c55698eb089cdf734a858ad1e30c9c8a22b9972075",
+      "table_box": [
+        687,
+        46,
+        686,
+        1237
+      ],
+      "button_box": [
+        7,
+        1158,
+        218,
+        65
+      ],
+      "template_sha256": "b4848cfe476c72a0e047594705695de58c285bc31c35b6d66b24f3a731fee966",
+      "basis": "Visually checked Fold/Call2.0BB/Raise row; raw whole text mask"
+    },
+    {
+      "label": "Raise",
+      "file": "Raise_large.png",
+      "source": "_72432B1C-F9F9-454A-A5D8-7DBE7A0E326A__aff0428c.png",
+      "source_sha256": "aff0428c7dd42730eb2978c55698eb089cdf734a858ad1e30c9c8a22b9972075",
+      "table_box": [
+        687,
+        46,
+        686,
+        1237
+      ],
+      "button_box": [
+        464,
+        1158,
+        218,
+        65
+      ],
+      "template_sha256": "c3fa3b63a6d406d6fc703c243f09d8e11059ca0e439691d3031f08c268aaa82a",
+      "basis": "Visually checked Fold/Call2.0BB/Raise row; raw whole text mask"
+    }
+  ]
+}

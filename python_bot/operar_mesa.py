@@ -12,28 +12,46 @@ Uso:
 """
 import argparse
 import sys
+import os
 import time
+
+# Ensure python_bot directory is in sys.path for internal packages (table_reading, table_discovery)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+if current_dir not in sys.path:
+    sys.path.insert(0, current_dir)
+parent_dir = os.path.dirname(current_dir)
+if parent_dir not in sys.path:
+    sys.path.insert(0, parent_dir)
 
 import cv2
 
-from table_reading.pipeline import configure_ocr
-from table_reading.automatic_table_crops import detect_table_crops
-from table_reading.action_buttons import read_action_buttons
-from table_reading.hand_tracking import read_hand_id
-from table_advisor import advise_table
-from preflop_advisor import PreflopAdvisor
-from preflop_context import PreflopAggressorTracker
-from reader_cache import ReaderCache
-from action_executor import ActionExecutor
-from action_coordinator import DryRunInput, map_advice_to_action, decision_identity
-from position_stabilizer import PositionStabilizer
-from screen_coords import rect_frame_to_screen
-from raise_panel import target_multiplier, map_multiplier_to_preset, read_raise_panel
-from raise_sequencer import RaiseSequencer
-from cursor_input_win import WindowsCursorInput
-from bot_control import BotControl, HotkeyListener, DISABLED, PAUSED, RUNNING
-from window_capture_engine import WindowCaptureEngine
-from table_discovery.pppoker import discover_pppoker
+try:
+    from table_reading.pipeline import configure_ocr
+    from table_reading.automatic_table_crops import detect_table_crops
+    from table_reading.action_buttons import read_action_buttons
+    from table_reading.hand_tracking import read_hand_id
+    from table_discovery.pppoker import discover_pppoker
+except ImportError as e:
+    print(f"[ERRO CRÍTICO] Módulo interno ausente: {e}. Verifique se os pacotes table_reading e table_discovery estão presentes em python_bot/")
+    sys.exit(1)
+
+try:
+    from table_advisor import advise_table
+    from preflop_advisor import PreflopAdvisor
+    from preflop_context import PreflopAggressorTracker
+    from reader_cache import ReaderCache
+    from action_executor import ActionExecutor
+    from action_coordinator import DryRunInput, map_advice_to_action, decision_identity
+    from position_stabilizer import PositionStabilizer
+    from screen_coords import rect_frame_to_screen
+    from raise_panel import target_multiplier, map_multiplier_to_preset, read_raise_panel
+    from raise_sequencer import RaiseSequencer
+    from cursor_input_win import WindowsCursorInput
+    from bot_control import BotControl, HotkeyListener, DISABLED, PAUSED, RUNNING
+    from window_capture_engine import WindowCaptureEngine
+except ImportError as e:
+    print(f"[ERRO CRÍTICO] Dependência do motor de poker ausente: {e}.")
+    sys.exit(1)
 
 DEFAULT_RANGES = r'C:\Meus Projetos\Aplicativos\nvt-ranges-validados.json'
 DEFAULT_DEEP = r'C:\Meus Projetos\Aplicativos\nvt-ranges-deep.json'

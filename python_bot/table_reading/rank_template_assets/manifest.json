@@ -1,0 +1,2521 @@
+{
+  "scope": "Real development glyphs plus resized variants from the same fixed training sources; source-disjoint images excluded. Transforms are not independent evidence.",
+  "templates": [
+    {
+      "rank": "Q",
+      "asset": "Q-0.png",
+      "asset_sha256": "71dd5872ec49bfffb97be285ce7976ff7285101f8796e48df0ebd3e561b78bd7",
+      "threshold_fraction": 0.6,
+      "source": "_22AFEE38-C581-4573-8EEE-A066396AE91A__d556a633.png",
+      "source_sha256": "d556a633e194a8dbd77a34252fc51db98eb50335e982d05fed013a7c86ca7f2e",
+      "table_box": [
+        703,
+        264,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "label_basis": "Hero batch visual transcription",
+      "role": "candidate"
+    },
+    {
+      "rank": "Q",
+      "asset": "Q-1.png",
+      "asset_sha256": "71dd5872ec49bfffb97be285ce7976ff7285101f8796e48df0ebd3e561b78bd7",
+      "threshold_fraction": 0.8,
+      "source": "_22AFEE38-C581-4573-8EEE-A066396AE91A__d556a633.png",
+      "source_sha256": "d556a633e194a8dbd77a34252fc51db98eb50335e982d05fed013a7c86ca7f2e",
+      "table_box": [
+        703,
+        264,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "label_basis": "Hero batch visual transcription",
+      "role": "candidate"
+    },
+    {
+      "rank": "4",
+      "asset": "4-0.png",
+      "asset_sha256": "b787e8f07a8ff891f3b08bceea334e67e463f36878fd4b8c4f3861f65b7a41b1",
+      "threshold_fraction": 0.6,
+      "source": "_22AFEE38-C581-4573-8EEE-A066396AE91A__d556a633.png",
+      "source_sha256": "d556a633e194a8dbd77a34252fc51db98eb50335e982d05fed013a7c86ca7f2e",
+      "table_box": [
+        703,
+        264,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "label_basis": "Hero batch visual transcription",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "4",
+      "asset": "4-1.png",
+      "asset_sha256": "b787e8f07a8ff891f3b08bceea334e67e463f36878fd4b8c4f3861f65b7a41b1",
+      "threshold_fraction": 0.8,
+      "source": "_22AFEE38-C581-4573-8EEE-A066396AE91A__d556a633.png",
+      "source_sha256": "d556a633e194a8dbd77a34252fc51db98eb50335e982d05fed013a7c86ca7f2e",
+      "table_box": [
+        703,
+        264,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "label_basis": "Hero batch visual transcription",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "A",
+      "asset": "A-0.png",
+      "asset_sha256": "796ac75b1371e83891ec9589667155b8d3cfde025c044a89ac49396e037faee7",
+      "threshold_fraction": 0.6,
+      "source": "_2DDE1911-9262-45F2-9D20-E90899BC739A__111d0a2e.png",
+      "source_sha256": "111d0a2ee537dbd2a6b453d681e8ee6b7ad92520d262f276c0e6a9d029f0fe31",
+      "table_box": [
+        716,
+        213,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "label_basis": "Hero batch visual transcription",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "A",
+      "asset": "A-1.png",
+      "asset_sha256": "796ac75b1371e83891ec9589667155b8d3cfde025c044a89ac49396e037faee7",
+      "threshold_fraction": 0.8,
+      "source": "_2DDE1911-9262-45F2-9D20-E90899BC739A__111d0a2e.png",
+      "source_sha256": "111d0a2ee537dbd2a6b453d681e8ee6b7ad92520d262f276c0e6a9d029f0fe31",
+      "table_box": [
+        716,
+        213,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "label_basis": "Hero batch visual transcription",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "K",
+      "asset": "K-0.png",
+      "asset_sha256": "b0efccd05e5ed1a03767be6b40c06d0ffdc3afccf5c7592618b60a92b0f23682",
+      "threshold_fraction": 0.6,
+      "source": "_2DDE1911-9262-45F2-9D20-E90899BC739A__111d0a2e.png",
+      "source_sha256": "111d0a2ee537dbd2a6b453d681e8ee6b7ad92520d262f276c0e6a9d029f0fe31",
+      "table_box": [
+        716,
+        213,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "label_basis": "Hero batch visual transcription",
+      "role": "candidate"
+    },
+    {
+      "rank": "K",
+      "asset": "K-1.png",
+      "asset_sha256": "61f72bd0b7ef165a9d29e372d27a02248d9bc5213d79b278419b6a1184c42eee",
+      "threshold_fraction": 0.8,
+      "source": "_2DDE1911-9262-45F2-9D20-E90899BC739A__111d0a2e.png",
+      "source_sha256": "111d0a2ee537dbd2a6b453d681e8ee6b7ad92520d262f276c0e6a9d029f0fe31",
+      "table_box": [
+        716,
+        213,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "label_basis": "Hero batch visual transcription",
+      "role": "candidate"
+    },
+    {
+      "rank": "T",
+      "asset": "T-0.png",
+      "asset_sha256": "98b93e7a2de5cc7c0e9e7c8588bb9e359f31f42f2ee5f8373930dcf1a2a14c69",
+      "threshold_fraction": 0.6,
+      "source": "_4528A8B5-F81C-4078-A8DB-C7ADBD91C311__85ee615d.png",
+      "source_sha256": "85ee615d31918032b5782e88ed0e9370ec1c1f28b451457ed2f7dcba66e49c09",
+      "table_box": [
+        674,
+        100,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "label_basis": "Hero batch visual transcription",
+      "role": "candidate"
+    },
+    {
+      "rank": "T",
+      "asset": "T-1.png",
+      "asset_sha256": "98b93e7a2de5cc7c0e9e7c8588bb9e359f31f42f2ee5f8373930dcf1a2a14c69",
+      "threshold_fraction": 0.8,
+      "source": "_4528A8B5-F81C-4078-A8DB-C7ADBD91C311__85ee615d.png",
+      "source_sha256": "85ee615d31918032b5782e88ed0e9370ec1c1f28b451457ed2f7dcba66e49c09",
+      "table_box": [
+        674,
+        100,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "label_basis": "Hero batch visual transcription",
+      "role": "candidate"
+    },
+    {
+      "rank": "5",
+      "asset": "5-0.png",
+      "asset_sha256": "be48fb2742b0d9874a93348b9cc715cb09b1d3369af313acc482a950456c6940",
+      "threshold_fraction": 0.6,
+      "source": "_4528A8B5-F81C-4078-A8DB-C7ADBD91C311__85ee615d.png",
+      "source_sha256": "85ee615d31918032b5782e88ed0e9370ec1c1f28b451457ed2f7dcba66e49c09",
+      "table_box": [
+        674,
+        100,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "label_basis": "Hero batch visual transcription",
+      "role": "candidate"
+    },
+    {
+      "rank": "5",
+      "asset": "5-1.png",
+      "asset_sha256": "be48fb2742b0d9874a93348b9cc715cb09b1d3369af313acc482a950456c6940",
+      "threshold_fraction": 0.8,
+      "source": "_4528A8B5-F81C-4078-A8DB-C7ADBD91C311__85ee615d.png",
+      "source_sha256": "85ee615d31918032b5782e88ed0e9370ec1c1f28b451457ed2f7dcba66e49c09",
+      "table_box": [
+        674,
+        100,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "label_basis": "Hero batch visual transcription",
+      "role": "candidate"
+    },
+    {
+      "rank": "3",
+      "asset": "3-0.png",
+      "asset_sha256": "209cd3a85a5dff5866e8be6f0f5353b93e8d4dfa8f67716144b99c0e796107ba",
+      "threshold_fraction": 0.6,
+      "source": "_58CB106F-09EA-4853-B7D9-98FD582FAD0E__581ae999.png",
+      "source_sha256": "581ae999225a9e7e442a7ffffab745f429b7f8b37e1104052329014afe9afbee",
+      "table_box": [
+        710,
+        224,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "label_basis": "Hero batch visual transcription",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "3",
+      "asset": "3-1.png",
+      "asset_sha256": "209cd3a85a5dff5866e8be6f0f5353b93e8d4dfa8f67716144b99c0e796107ba",
+      "threshold_fraction": 0.8,
+      "source": "_58CB106F-09EA-4853-B7D9-98FD582FAD0E__581ae999.png",
+      "source_sha256": "581ae999225a9e7e442a7ffffab745f429b7f8b37e1104052329014afe9afbee",
+      "table_box": [
+        710,
+        224,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "label_basis": "Hero batch visual transcription",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "J",
+      "asset": "J-0.png",
+      "asset_sha256": "70ff6efc09755cd3d4a9cad8458563bb613fc20c8edb1c9c47bafbbafe22943a",
+      "threshold_fraction": 0.6,
+      "source": "_76D7A22C-BC3A-435D-BB63-A4AC9AE0A1A0__78803c80.png",
+      "source_sha256": "78803c8043173a4558841d5932316cf56dc3beb58f08084ecb7088a8ee930a04",
+      "table_box": [
+        702,
+        266,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "label_basis": "Hero batch visual transcription",
+      "role": "candidate"
+    },
+    {
+      "rank": "J",
+      "asset": "J-1.png",
+      "asset_sha256": "70ff6efc09755cd3d4a9cad8458563bb613fc20c8edb1c9c47bafbbafe22943a",
+      "threshold_fraction": 0.8,
+      "source": "_76D7A22C-BC3A-435D-BB63-A4AC9AE0A1A0__78803c80.png",
+      "source_sha256": "78803c8043173a4558841d5932316cf56dc3beb58f08084ecb7088a8ee930a04",
+      "table_box": [
+        702,
+        266,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "label_basis": "Hero batch visual transcription",
+      "role": "candidate"
+    },
+    {
+      "rank": "2",
+      "asset": "2-0.png",
+      "asset_sha256": "541c9d6fecd61e20b6036279552ad486250ef92a834c510145990995964edc59",
+      "threshold_fraction": 0.6,
+      "source": "_76D7A22C-BC3A-435D-BB63-A4AC9AE0A1A0__78803c80.png",
+      "source_sha256": "78803c8043173a4558841d5932316cf56dc3beb58f08084ecb7088a8ee930a04",
+      "table_box": [
+        702,
+        266,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "label_basis": "Hero batch visual transcription",
+      "role": "candidate"
+    },
+    {
+      "rank": "2",
+      "asset": "2-1.png",
+      "asset_sha256": "541c9d6fecd61e20b6036279552ad486250ef92a834c510145990995964edc59",
+      "threshold_fraction": 0.8,
+      "source": "_76D7A22C-BC3A-435D-BB63-A4AC9AE0A1A0__78803c80.png",
+      "source_sha256": "78803c8043173a4558841d5932316cf56dc3beb58f08084ecb7088a8ee930a04",
+      "table_box": [
+        702,
+        266,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "label_basis": "Hero batch visual transcription",
+      "role": "candidate"
+    },
+    {
+      "rank": "9",
+      "asset": "9-0.png",
+      "asset_sha256": "e631e23fb05a42e833122e705665f62f0b0f81f61fe7e132b14d68ba353c71f0",
+      "threshold_fraction": 0.6,
+      "source": "_7C62D925-1CC9-4B7C-A92D-0E3379E07494__3d8f87c2.png",
+      "source_sha256": "3d8f87c2389a8ccaddb75a66e7a61d6b5a4af1250abee0d041c07c270cad8064",
+      "table_box": [
+        689,
+        144,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "label_basis": "Hero batch visual transcription",
+      "role": "candidate"
+    },
+    {
+      "rank": "9",
+      "asset": "9-1.png",
+      "asset_sha256": "e631e23fb05a42e833122e705665f62f0b0f81f61fe7e132b14d68ba353c71f0",
+      "threshold_fraction": 0.8,
+      "source": "_7C62D925-1CC9-4B7C-A92D-0E3379E07494__3d8f87c2.png",
+      "source_sha256": "3d8f87c2389a8ccaddb75a66e7a61d6b5a4af1250abee0d041c07c270cad8064",
+      "table_box": [
+        689,
+        144,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "label_basis": "Hero batch visual transcription",
+      "role": "candidate"
+    },
+    {
+      "rank": "7",
+      "asset": "7-0.png",
+      "asset_sha256": "6cad501a8d0ecc04250bd2af57bbd16b4b6dffe7631d2a95fe098a318b0de6b3",
+      "threshold_fraction": 0.6,
+      "source": "_C998F597-5786-40A5-A73B-E450730D847E__475524bf.png",
+      "source_sha256": "475524bf61a48c2662d1b27b2efa2fa1b40af9e5972b1ed68b0c4999a0a0d6aa",
+      "table_box": [
+        724,
+        183,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "label_basis": "Hero batch visual transcription",
+      "role": "candidate"
+    },
+    {
+      "rank": "7",
+      "asset": "7-1.png",
+      "asset_sha256": "6cad501a8d0ecc04250bd2af57bbd16b4b6dffe7631d2a95fe098a318b0de6b3",
+      "threshold_fraction": 0.8,
+      "source": "_C998F597-5786-40A5-A73B-E450730D847E__475524bf.png",
+      "source_sha256": "475524bf61a48c2662d1b27b2efa2fa1b40af9e5972b1ed68b0c4999a0a0d6aa",
+      "table_box": [
+        724,
+        183,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "label_basis": "Hero batch visual transcription",
+      "role": "candidate"
+    },
+    {
+      "rank": "6",
+      "asset": "6-0.png",
+      "asset_sha256": "4204b8abc204856d50a4882a5c91566ff06fa5f930d719a5a3372f697759302b",
+      "threshold_fraction": 0.6,
+      "source": "_C998F597-5786-40A5-A73B-E450730D847E__475524bf.png",
+      "source_sha256": "475524bf61a48c2662d1b27b2efa2fa1b40af9e5972b1ed68b0c4999a0a0d6aa",
+      "table_box": [
+        724,
+        183,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "label_basis": "Hero batch visual transcription",
+      "role": "candidate"
+    },
+    {
+      "rank": "6",
+      "asset": "6-1.png",
+      "asset_sha256": "4204b8abc204856d50a4882a5c91566ff06fa5f930d719a5a3372f697759302b",
+      "threshold_fraction": 0.8,
+      "source": "_C998F597-5786-40A5-A73B-E450730D847E__475524bf.png",
+      "source_sha256": "475524bf61a48c2662d1b27b2efa2fa1b40af9e5972b1ed68b0c4999a0a0d6aa",
+      "table_box": [
+        724,
+        183,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "label_basis": "Hero batch visual transcription",
+      "role": "candidate"
+    },
+    {
+      "rank": "Q",
+      "asset": "Q-i1s0p5p0-0.png",
+      "asset_sha256": "3995fa60c050ed1e617e725aea31f488f2779fd9a5ec64ea2f30d9eba7f63b4d",
+      "threshold_fraction": 0.6,
+      "source": "_22AFEE38-C581-4573-8EEE-A066396AE91A__d556a633.png",
+      "source_sha256": "d556a633e194a8dbd77a34252fc51db98eb50335e982d05fed013a7c86ca7f2e",
+      "table_box": [
+        703,
+        264,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "Q",
+      "asset": "Q-i1s0p5p0-1.png",
+      "asset_sha256": "3995fa60c050ed1e617e725aea31f488f2779fd9a5ec64ea2f30d9eba7f63b4d",
+      "threshold_fraction": 0.8,
+      "source": "_22AFEE38-C581-4573-8EEE-A066396AE91A__d556a633.png",
+      "source_sha256": "d556a633e194a8dbd77a34252fc51db98eb50335e982d05fed013a7c86ca7f2e",
+      "table_box": [
+        703,
+        264,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "4",
+      "asset": "4-i1s0p5p1-0.png",
+      "asset_sha256": "69f9c995af248abd055cc009ba7b2ad89696bd5591a436aeb4a848638b1432c3",
+      "threshold_fraction": 0.6,
+      "source": "_22AFEE38-C581-4573-8EEE-A066396AE91A__d556a633.png",
+      "source_sha256": "d556a633e194a8dbd77a34252fc51db98eb50335e982d05fed013a7c86ca7f2e",
+      "table_box": [
+        703,
+        264,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "4",
+      "asset": "4-i1s0p5p1-1.png",
+      "asset_sha256": "69f9c995af248abd055cc009ba7b2ad89696bd5591a436aeb4a848638b1432c3",
+      "threshold_fraction": 0.8,
+      "source": "_22AFEE38-C581-4573-8EEE-A066396AE91A__d556a633.png",
+      "source_sha256": "d556a633e194a8dbd77a34252fc51db98eb50335e982d05fed013a7c86ca7f2e",
+      "table_box": [
+        703,
+        264,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "Q",
+      "asset": "Q-i1s0p75p0-0.png",
+      "asset_sha256": "c5d4ce8034b132e8cfc9bd158ae7faaec74a5469d7893763da2daf8b1f0bf6cd",
+      "threshold_fraction": 0.6,
+      "source": "_22AFEE38-C581-4573-8EEE-A066396AE91A__d556a633.png",
+      "source_sha256": "d556a633e194a8dbd77a34252fc51db98eb50335e982d05fed013a7c86ca7f2e",
+      "table_box": [
+        703,
+        264,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "Q",
+      "asset": "Q-i1s0p75p0-1.png",
+      "asset_sha256": "c5d4ce8034b132e8cfc9bd158ae7faaec74a5469d7893763da2daf8b1f0bf6cd",
+      "threshold_fraction": 0.8,
+      "source": "_22AFEE38-C581-4573-8EEE-A066396AE91A__d556a633.png",
+      "source_sha256": "d556a633e194a8dbd77a34252fc51db98eb50335e982d05fed013a7c86ca7f2e",
+      "table_box": [
+        703,
+        264,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "4",
+      "asset": "4-i1s0p75p1-0.png",
+      "asset_sha256": "98d0d39c530b0dba40e451e47fb86fc0171eead5cb8807a5353a1d5888efc24c",
+      "threshold_fraction": 0.6,
+      "source": "_22AFEE38-C581-4573-8EEE-A066396AE91A__d556a633.png",
+      "source_sha256": "d556a633e194a8dbd77a34252fc51db98eb50335e982d05fed013a7c86ca7f2e",
+      "table_box": [
+        703,
+        264,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "4",
+      "asset": "4-i1s0p75p1-1.png",
+      "asset_sha256": "98d0d39c530b0dba40e451e47fb86fc0171eead5cb8807a5353a1d5888efc24c",
+      "threshold_fraction": 0.8,
+      "source": "_22AFEE38-C581-4573-8EEE-A066396AE91A__d556a633.png",
+      "source_sha256": "d556a633e194a8dbd77a34252fc51db98eb50335e982d05fed013a7c86ca7f2e",
+      "table_box": [
+        703,
+        264,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "Q",
+      "asset": "Q-i1s1p25p0-0.png",
+      "asset_sha256": "1b5fbffd0e0b4540d05b59fd5ebf686275f4f1b4af5781e97c9dcdf9a6afc58c",
+      "threshold_fraction": 0.6,
+      "source": "_22AFEE38-C581-4573-8EEE-A066396AE91A__d556a633.png",
+      "source_sha256": "d556a633e194a8dbd77a34252fc51db98eb50335e982d05fed013a7c86ca7f2e",
+      "table_box": [
+        703,
+        264,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "Q",
+      "asset": "Q-i1s1p25p0-1.png",
+      "asset_sha256": "1b5fbffd0e0b4540d05b59fd5ebf686275f4f1b4af5781e97c9dcdf9a6afc58c",
+      "threshold_fraction": 0.8,
+      "source": "_22AFEE38-C581-4573-8EEE-A066396AE91A__d556a633.png",
+      "source_sha256": "d556a633e194a8dbd77a34252fc51db98eb50335e982d05fed013a7c86ca7f2e",
+      "table_box": [
+        703,
+        264,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "4",
+      "asset": "4-i1s1p25p1-0.png",
+      "asset_sha256": "0f77bdf8c4b0ccd0547e294d07d44e4a4e5ff3504304d92e29642f2afc90b4e1",
+      "threshold_fraction": 0.6,
+      "source": "_22AFEE38-C581-4573-8EEE-A066396AE91A__d556a633.png",
+      "source_sha256": "d556a633e194a8dbd77a34252fc51db98eb50335e982d05fed013a7c86ca7f2e",
+      "table_box": [
+        703,
+        264,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "4",
+      "asset": "4-i1s1p25p1-1.png",
+      "asset_sha256": "0f77bdf8c4b0ccd0547e294d07d44e4a4e5ff3504304d92e29642f2afc90b4e1",
+      "threshold_fraction": 0.8,
+      "source": "_22AFEE38-C581-4573-8EEE-A066396AE91A__d556a633.png",
+      "source_sha256": "d556a633e194a8dbd77a34252fc51db98eb50335e982d05fed013a7c86ca7f2e",
+      "table_box": [
+        703,
+        264,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "A",
+      "asset": "A-i2s0p5p0-0.png",
+      "asset_sha256": "886f5079d5d56261f07eddaf9c3eade8f223f473143676d577efc83c0986a1a0",
+      "threshold_fraction": 0.6,
+      "source": "_2DDE1911-9262-45F2-9D20-E90899BC739A__111d0a2e.png",
+      "source_sha256": "111d0a2ee537dbd2a6b453d681e8ee6b7ad92520d262f276c0e6a9d029f0fe31",
+      "table_box": [
+        716,
+        213,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "A",
+      "asset": "A-i2s0p5p0-1.png",
+      "asset_sha256": "886f5079d5d56261f07eddaf9c3eade8f223f473143676d577efc83c0986a1a0",
+      "threshold_fraction": 0.8,
+      "source": "_2DDE1911-9262-45F2-9D20-E90899BC739A__111d0a2e.png",
+      "source_sha256": "111d0a2ee537dbd2a6b453d681e8ee6b7ad92520d262f276c0e6a9d029f0fe31",
+      "table_box": [
+        716,
+        213,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "K",
+      "asset": "K-i2s0p5p1-0.png",
+      "asset_sha256": "acd8b9489a5d60c01413c5fd7d98d5c389a87761315e0d1ccc9f4b510617d8bf",
+      "threshold_fraction": 0.6,
+      "source": "_2DDE1911-9262-45F2-9D20-E90899BC739A__111d0a2e.png",
+      "source_sha256": "111d0a2ee537dbd2a6b453d681e8ee6b7ad92520d262f276c0e6a9d029f0fe31",
+      "table_box": [
+        716,
+        213,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "K",
+      "asset": "K-i2s0p5p1-1.png",
+      "asset_sha256": "8ef11991f76e5b470e3a3a263620f10c064fb61a468361871cc1878bc9e209c2",
+      "threshold_fraction": 0.8,
+      "source": "_2DDE1911-9262-45F2-9D20-E90899BC739A__111d0a2e.png",
+      "source_sha256": "111d0a2ee537dbd2a6b453d681e8ee6b7ad92520d262f276c0e6a9d029f0fe31",
+      "table_box": [
+        716,
+        213,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "A",
+      "asset": "A-i2s0p75p0-0.png",
+      "asset_sha256": "c862d8e8dc18c9f7c4159f4788bdd0599ee3655d916d53128cf77c0396d1722d",
+      "threshold_fraction": 0.6,
+      "source": "_2DDE1911-9262-45F2-9D20-E90899BC739A__111d0a2e.png",
+      "source_sha256": "111d0a2ee537dbd2a6b453d681e8ee6b7ad92520d262f276c0e6a9d029f0fe31",
+      "table_box": [
+        716,
+        213,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "A",
+      "asset": "A-i2s0p75p0-1.png",
+      "asset_sha256": "c862d8e8dc18c9f7c4159f4788bdd0599ee3655d916d53128cf77c0396d1722d",
+      "threshold_fraction": 0.8,
+      "source": "_2DDE1911-9262-45F2-9D20-E90899BC739A__111d0a2e.png",
+      "source_sha256": "111d0a2ee537dbd2a6b453d681e8ee6b7ad92520d262f276c0e6a9d029f0fe31",
+      "table_box": [
+        716,
+        213,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "K",
+      "asset": "K-i2s0p75p1-0.png",
+      "asset_sha256": "83732e794205660bdaea51dacbb7ce9413ed4ecfd54330ce059f9cf27a0fe694",
+      "threshold_fraction": 0.6,
+      "source": "_2DDE1911-9262-45F2-9D20-E90899BC739A__111d0a2e.png",
+      "source_sha256": "111d0a2ee537dbd2a6b453d681e8ee6b7ad92520d262f276c0e6a9d029f0fe31",
+      "table_box": [
+        716,
+        213,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "K",
+      "asset": "K-i2s0p75p1-1.png",
+      "asset_sha256": "8c704591ebe531142f538d91b7265d3fa649255a3f532e948c4eee85556c6705",
+      "threshold_fraction": 0.8,
+      "source": "_2DDE1911-9262-45F2-9D20-E90899BC739A__111d0a2e.png",
+      "source_sha256": "111d0a2ee537dbd2a6b453d681e8ee6b7ad92520d262f276c0e6a9d029f0fe31",
+      "table_box": [
+        716,
+        213,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "A",
+      "asset": "A-i2s1p25p0-0.png",
+      "asset_sha256": "b2312426acd2e4c1dd17682beeb8bfc9058b5891c4fa44ba846361be6f2f3ff4",
+      "threshold_fraction": 0.6,
+      "source": "_2DDE1911-9262-45F2-9D20-E90899BC739A__111d0a2e.png",
+      "source_sha256": "111d0a2ee537dbd2a6b453d681e8ee6b7ad92520d262f276c0e6a9d029f0fe31",
+      "table_box": [
+        716,
+        213,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "A",
+      "asset": "A-i2s1p25p0-1.png",
+      "asset_sha256": "b2312426acd2e4c1dd17682beeb8bfc9058b5891c4fa44ba846361be6f2f3ff4",
+      "threshold_fraction": 0.8,
+      "source": "_2DDE1911-9262-45F2-9D20-E90899BC739A__111d0a2e.png",
+      "source_sha256": "111d0a2ee537dbd2a6b453d681e8ee6b7ad92520d262f276c0e6a9d029f0fe31",
+      "table_box": [
+        716,
+        213,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "K",
+      "asset": "K-i2s1p25p1-0.png",
+      "asset_sha256": "9da8e841721fec492f53b23f6fa511451d4214bf5f05a95d942750c9e2989e58",
+      "threshold_fraction": 0.6,
+      "source": "_2DDE1911-9262-45F2-9D20-E90899BC739A__111d0a2e.png",
+      "source_sha256": "111d0a2ee537dbd2a6b453d681e8ee6b7ad92520d262f276c0e6a9d029f0fe31",
+      "table_box": [
+        716,
+        213,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "K",
+      "asset": "K-i2s1p25p1-1.png",
+      "asset_sha256": "0288b1626896b7c7b5e8341ce3f7a9b0f01bb28a92a1964ad492d16d09fbe0de",
+      "threshold_fraction": 0.8,
+      "source": "_2DDE1911-9262-45F2-9D20-E90899BC739A__111d0a2e.png",
+      "source_sha256": "111d0a2ee537dbd2a6b453d681e8ee6b7ad92520d262f276c0e6a9d029f0fe31",
+      "table_box": [
+        716,
+        213,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "T",
+      "asset": "T-i5s0p5p0-0.png",
+      "asset_sha256": "209aa1f8214fde0e344ab92bb5186af32edcfd278eae079f6e7a64197a85112e",
+      "threshold_fraction": 0.6,
+      "source": "_4528A8B5-F81C-4078-A8DB-C7ADBD91C311__85ee615d.png",
+      "source_sha256": "85ee615d31918032b5782e88ed0e9370ec1c1f28b451457ed2f7dcba66e49c09",
+      "table_box": [
+        674,
+        100,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "T",
+      "asset": "T-i5s0p5p0-1.png",
+      "asset_sha256": "209aa1f8214fde0e344ab92bb5186af32edcfd278eae079f6e7a64197a85112e",
+      "threshold_fraction": 0.8,
+      "source": "_4528A8B5-F81C-4078-A8DB-C7ADBD91C311__85ee615d.png",
+      "source_sha256": "85ee615d31918032b5782e88ed0e9370ec1c1f28b451457ed2f7dcba66e49c09",
+      "table_box": [
+        674,
+        100,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "5",
+      "asset": "5-i5s0p5p1-0.png",
+      "asset_sha256": "5e25229d381757a92362a0595005cf597ed74f343c3be3a04af12bad4eca2dd0",
+      "threshold_fraction": 0.6,
+      "source": "_4528A8B5-F81C-4078-A8DB-C7ADBD91C311__85ee615d.png",
+      "source_sha256": "85ee615d31918032b5782e88ed0e9370ec1c1f28b451457ed2f7dcba66e49c09",
+      "table_box": [
+        674,
+        100,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "5",
+      "asset": "5-i5s0p5p1-1.png",
+      "asset_sha256": "5e25229d381757a92362a0595005cf597ed74f343c3be3a04af12bad4eca2dd0",
+      "threshold_fraction": 0.8,
+      "source": "_4528A8B5-F81C-4078-A8DB-C7ADBD91C311__85ee615d.png",
+      "source_sha256": "85ee615d31918032b5782e88ed0e9370ec1c1f28b451457ed2f7dcba66e49c09",
+      "table_box": [
+        674,
+        100,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "T",
+      "asset": "T-i5s0p75p0-0.png",
+      "asset_sha256": "bf4bb9d7da74fda991a382a0b3ffff124d63dc22eaec1fe44269d319a3410733",
+      "threshold_fraction": 0.6,
+      "source": "_4528A8B5-F81C-4078-A8DB-C7ADBD91C311__85ee615d.png",
+      "source_sha256": "85ee615d31918032b5782e88ed0e9370ec1c1f28b451457ed2f7dcba66e49c09",
+      "table_box": [
+        674,
+        100,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "T",
+      "asset": "T-i5s0p75p0-1.png",
+      "asset_sha256": "bf4bb9d7da74fda991a382a0b3ffff124d63dc22eaec1fe44269d319a3410733",
+      "threshold_fraction": 0.8,
+      "source": "_4528A8B5-F81C-4078-A8DB-C7ADBD91C311__85ee615d.png",
+      "source_sha256": "85ee615d31918032b5782e88ed0e9370ec1c1f28b451457ed2f7dcba66e49c09",
+      "table_box": [
+        674,
+        100,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "5",
+      "asset": "5-i5s0p75p1-0.png",
+      "asset_sha256": "45fbe19c9fab0ee9103534df5da0ad62baba1232fd3c6daced68bfd1419abcf0",
+      "threshold_fraction": 0.6,
+      "source": "_4528A8B5-F81C-4078-A8DB-C7ADBD91C311__85ee615d.png",
+      "source_sha256": "85ee615d31918032b5782e88ed0e9370ec1c1f28b451457ed2f7dcba66e49c09",
+      "table_box": [
+        674,
+        100,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "5",
+      "asset": "5-i5s0p75p1-1.png",
+      "asset_sha256": "45fbe19c9fab0ee9103534df5da0ad62baba1232fd3c6daced68bfd1419abcf0",
+      "threshold_fraction": 0.8,
+      "source": "_4528A8B5-F81C-4078-A8DB-C7ADBD91C311__85ee615d.png",
+      "source_sha256": "85ee615d31918032b5782e88ed0e9370ec1c1f28b451457ed2f7dcba66e49c09",
+      "table_box": [
+        674,
+        100,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "T",
+      "asset": "T-i5s1p25p0-0.png",
+      "asset_sha256": "3f5d46e8e3e3365ce2c7792b44bc163a370862c4c43528a26df7cd47f02ec315",
+      "threshold_fraction": 0.6,
+      "source": "_4528A8B5-F81C-4078-A8DB-C7ADBD91C311__85ee615d.png",
+      "source_sha256": "85ee615d31918032b5782e88ed0e9370ec1c1f28b451457ed2f7dcba66e49c09",
+      "table_box": [
+        674,
+        100,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "T",
+      "asset": "T-i5s1p25p0-1.png",
+      "asset_sha256": "3f5d46e8e3e3365ce2c7792b44bc163a370862c4c43528a26df7cd47f02ec315",
+      "threshold_fraction": 0.8,
+      "source": "_4528A8B5-F81C-4078-A8DB-C7ADBD91C311__85ee615d.png",
+      "source_sha256": "85ee615d31918032b5782e88ed0e9370ec1c1f28b451457ed2f7dcba66e49c09",
+      "table_box": [
+        674,
+        100,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "5",
+      "asset": "5-i5s1p25p1-0.png",
+      "asset_sha256": "cbd25d44c71ccdb14d8e3a882ff264c29d385a0b4cc1945a62b1bc60883ebacf",
+      "threshold_fraction": 0.6,
+      "source": "_4528A8B5-F81C-4078-A8DB-C7ADBD91C311__85ee615d.png",
+      "source_sha256": "85ee615d31918032b5782e88ed0e9370ec1c1f28b451457ed2f7dcba66e49c09",
+      "table_box": [
+        674,
+        100,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "5",
+      "asset": "5-i5s1p25p1-1.png",
+      "asset_sha256": "cbd25d44c71ccdb14d8e3a882ff264c29d385a0b4cc1945a62b1bc60883ebacf",
+      "threshold_fraction": 0.8,
+      "source": "_4528A8B5-F81C-4078-A8DB-C7ADBD91C311__85ee615d.png",
+      "source_sha256": "85ee615d31918032b5782e88ed0e9370ec1c1f28b451457ed2f7dcba66e49c09",
+      "table_box": [
+        674,
+        100,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "3",
+      "asset": "3-i7s0p5p0-0.png",
+      "asset_sha256": "c6df679c42cd15a01e83165a3699f7373156ddc0a7fba6399e51e7551030133e",
+      "threshold_fraction": 0.6,
+      "source": "_58CB106F-09EA-4853-B7D9-98FD582FAD0E__581ae999.png",
+      "source_sha256": "581ae999225a9e7e442a7ffffab745f429b7f8b37e1104052329014afe9afbee",
+      "table_box": [
+        710,
+        224,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "3",
+      "asset": "3-i7s0p5p0-1.png",
+      "asset_sha256": "c6df679c42cd15a01e83165a3699f7373156ddc0a7fba6399e51e7551030133e",
+      "threshold_fraction": 0.8,
+      "source": "_58CB106F-09EA-4853-B7D9-98FD582FAD0E__581ae999.png",
+      "source_sha256": "581ae999225a9e7e442a7ffffab745f429b7f8b37e1104052329014afe9afbee",
+      "table_box": [
+        710,
+        224,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "Q",
+      "asset": "Q-i7s0p5p1-0.png",
+      "asset_sha256": "4de4a74f6c7bf577ee3b2b86f4fbd8fc6efaf73165e32f5faf2fefd87a718f37",
+      "threshold_fraction": 0.6,
+      "source": "_58CB106F-09EA-4853-B7D9-98FD582FAD0E__581ae999.png",
+      "source_sha256": "581ae999225a9e7e442a7ffffab745f429b7f8b37e1104052329014afe9afbee",
+      "table_box": [
+        710,
+        224,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "Q",
+      "asset": "Q-i7s0p5p1-1.png",
+      "asset_sha256": "4de4a74f6c7bf577ee3b2b86f4fbd8fc6efaf73165e32f5faf2fefd87a718f37",
+      "threshold_fraction": 0.8,
+      "source": "_58CB106F-09EA-4853-B7D9-98FD582FAD0E__581ae999.png",
+      "source_sha256": "581ae999225a9e7e442a7ffffab745f429b7f8b37e1104052329014afe9afbee",
+      "table_box": [
+        710,
+        224,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "3",
+      "asset": "3-i7s0p75p0-0.png",
+      "asset_sha256": "ffef20f56d1ec8306b491b19270e7d30cf517e89ca1ab70a6b792551efaacad3",
+      "threshold_fraction": 0.6,
+      "source": "_58CB106F-09EA-4853-B7D9-98FD582FAD0E__581ae999.png",
+      "source_sha256": "581ae999225a9e7e442a7ffffab745f429b7f8b37e1104052329014afe9afbee",
+      "table_box": [
+        710,
+        224,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "3",
+      "asset": "3-i7s0p75p0-1.png",
+      "asset_sha256": "ffef20f56d1ec8306b491b19270e7d30cf517e89ca1ab70a6b792551efaacad3",
+      "threshold_fraction": 0.8,
+      "source": "_58CB106F-09EA-4853-B7D9-98FD582FAD0E__581ae999.png",
+      "source_sha256": "581ae999225a9e7e442a7ffffab745f429b7f8b37e1104052329014afe9afbee",
+      "table_box": [
+        710,
+        224,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "Q",
+      "asset": "Q-i7s0p75p1-0.png",
+      "asset_sha256": "2989955516226afccf36088aeb2b432e784b67b01b955eb958560a4cfad2ab17",
+      "threshold_fraction": 0.6,
+      "source": "_58CB106F-09EA-4853-B7D9-98FD582FAD0E__581ae999.png",
+      "source_sha256": "581ae999225a9e7e442a7ffffab745f429b7f8b37e1104052329014afe9afbee",
+      "table_box": [
+        710,
+        224,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "Q",
+      "asset": "Q-i7s0p75p1-1.png",
+      "asset_sha256": "2989955516226afccf36088aeb2b432e784b67b01b955eb958560a4cfad2ab17",
+      "threshold_fraction": 0.8,
+      "source": "_58CB106F-09EA-4853-B7D9-98FD582FAD0E__581ae999.png",
+      "source_sha256": "581ae999225a9e7e442a7ffffab745f429b7f8b37e1104052329014afe9afbee",
+      "table_box": [
+        710,
+        224,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "3",
+      "asset": "3-i7s1p25p0-0.png",
+      "asset_sha256": "0344b543c68efd9a9f2a2d34f8d3fe88df8073f451348f4312afac6922a0b488",
+      "threshold_fraction": 0.6,
+      "source": "_58CB106F-09EA-4853-B7D9-98FD582FAD0E__581ae999.png",
+      "source_sha256": "581ae999225a9e7e442a7ffffab745f429b7f8b37e1104052329014afe9afbee",
+      "table_box": [
+        710,
+        224,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "3",
+      "asset": "3-i7s1p25p0-1.png",
+      "asset_sha256": "0344b543c68efd9a9f2a2d34f8d3fe88df8073f451348f4312afac6922a0b488",
+      "threshold_fraction": 0.8,
+      "source": "_58CB106F-09EA-4853-B7D9-98FD582FAD0E__581ae999.png",
+      "source_sha256": "581ae999225a9e7e442a7ffffab745f429b7f8b37e1104052329014afe9afbee",
+      "table_box": [
+        710,
+        224,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "Q",
+      "asset": "Q-i7s1p25p1-0.png",
+      "asset_sha256": "0d3d0824a95306b230c2636e552025952a23b8166d7dc29d1870a1695c7fc1b5",
+      "threshold_fraction": 0.6,
+      "source": "_58CB106F-09EA-4853-B7D9-98FD582FAD0E__581ae999.png",
+      "source_sha256": "581ae999225a9e7e442a7ffffab745f429b7f8b37e1104052329014afe9afbee",
+      "table_box": [
+        710,
+        224,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "Q",
+      "asset": "Q-i7s1p25p1-1.png",
+      "asset_sha256": "0d3d0824a95306b230c2636e552025952a23b8166d7dc29d1870a1695c7fc1b5",
+      "threshold_fraction": 0.8,
+      "source": "_58CB106F-09EA-4853-B7D9-98FD582FAD0E__581ae999.png",
+      "source_sha256": "581ae999225a9e7e442a7ffffab745f429b7f8b37e1104052329014afe9afbee",
+      "table_box": [
+        710,
+        224,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "J",
+      "asset": "J-i9s0p5p0-0.png",
+      "asset_sha256": "5f3086010fe4f0c6fcb0bb95884cc5632099fe8e4008d25145897e86621cfba2",
+      "threshold_fraction": 0.6,
+      "source": "_76D7A22C-BC3A-435D-BB63-A4AC9AE0A1A0__78803c80.png",
+      "source_sha256": "78803c8043173a4558841d5932316cf56dc3beb58f08084ecb7088a8ee930a04",
+      "table_box": [
+        702,
+        266,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "J",
+      "asset": "J-i9s0p5p0-1.png",
+      "asset_sha256": "5f3086010fe4f0c6fcb0bb95884cc5632099fe8e4008d25145897e86621cfba2",
+      "threshold_fraction": 0.8,
+      "source": "_76D7A22C-BC3A-435D-BB63-A4AC9AE0A1A0__78803c80.png",
+      "source_sha256": "78803c8043173a4558841d5932316cf56dc3beb58f08084ecb7088a8ee930a04",
+      "table_box": [
+        702,
+        266,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "2",
+      "asset": "2-i9s0p5p1-0.png",
+      "asset_sha256": "96ec3ce2b72637725673868ed6880b63171fa03703028db3a5e7938b9fdc13fa",
+      "threshold_fraction": 0.6,
+      "source": "_76D7A22C-BC3A-435D-BB63-A4AC9AE0A1A0__78803c80.png",
+      "source_sha256": "78803c8043173a4558841d5932316cf56dc3beb58f08084ecb7088a8ee930a04",
+      "table_box": [
+        702,
+        266,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "2",
+      "asset": "2-i9s0p5p1-1.png",
+      "asset_sha256": "96ec3ce2b72637725673868ed6880b63171fa03703028db3a5e7938b9fdc13fa",
+      "threshold_fraction": 0.8,
+      "source": "_76D7A22C-BC3A-435D-BB63-A4AC9AE0A1A0__78803c80.png",
+      "source_sha256": "78803c8043173a4558841d5932316cf56dc3beb58f08084ecb7088a8ee930a04",
+      "table_box": [
+        702,
+        266,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "J",
+      "asset": "J-i9s0p75p0-0.png",
+      "asset_sha256": "08178a82f6fa2ffd01da8d7ab52664d18db6b2ba665242be26a10bd2ecd2c2a5",
+      "threshold_fraction": 0.6,
+      "source": "_76D7A22C-BC3A-435D-BB63-A4AC9AE0A1A0__78803c80.png",
+      "source_sha256": "78803c8043173a4558841d5932316cf56dc3beb58f08084ecb7088a8ee930a04",
+      "table_box": [
+        702,
+        266,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "J",
+      "asset": "J-i9s0p75p0-1.png",
+      "asset_sha256": "08178a82f6fa2ffd01da8d7ab52664d18db6b2ba665242be26a10bd2ecd2c2a5",
+      "threshold_fraction": 0.8,
+      "source": "_76D7A22C-BC3A-435D-BB63-A4AC9AE0A1A0__78803c80.png",
+      "source_sha256": "78803c8043173a4558841d5932316cf56dc3beb58f08084ecb7088a8ee930a04",
+      "table_box": [
+        702,
+        266,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "2",
+      "asset": "2-i9s0p75p1-0.png",
+      "asset_sha256": "a086e6bfcbf0f0325354fa638388fa6175898fc5a7d8b00a1019963141e3999c",
+      "threshold_fraction": 0.6,
+      "source": "_76D7A22C-BC3A-435D-BB63-A4AC9AE0A1A0__78803c80.png",
+      "source_sha256": "78803c8043173a4558841d5932316cf56dc3beb58f08084ecb7088a8ee930a04",
+      "table_box": [
+        702,
+        266,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "2",
+      "asset": "2-i9s0p75p1-1.png",
+      "asset_sha256": "a086e6bfcbf0f0325354fa638388fa6175898fc5a7d8b00a1019963141e3999c",
+      "threshold_fraction": 0.8,
+      "source": "_76D7A22C-BC3A-435D-BB63-A4AC9AE0A1A0__78803c80.png",
+      "source_sha256": "78803c8043173a4558841d5932316cf56dc3beb58f08084ecb7088a8ee930a04",
+      "table_box": [
+        702,
+        266,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "J",
+      "asset": "J-i9s1p25p0-0.png",
+      "asset_sha256": "c1d94fa6c7849d027d9d7c3e2dfbffc3090a969afbe091f67a460b9b57e9a09a",
+      "threshold_fraction": 0.6,
+      "source": "_76D7A22C-BC3A-435D-BB63-A4AC9AE0A1A0__78803c80.png",
+      "source_sha256": "78803c8043173a4558841d5932316cf56dc3beb58f08084ecb7088a8ee930a04",
+      "table_box": [
+        702,
+        266,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "J",
+      "asset": "J-i9s1p25p0-1.png",
+      "asset_sha256": "c1d94fa6c7849d027d9d7c3e2dfbffc3090a969afbe091f67a460b9b57e9a09a",
+      "threshold_fraction": 0.8,
+      "source": "_76D7A22C-BC3A-435D-BB63-A4AC9AE0A1A0__78803c80.png",
+      "source_sha256": "78803c8043173a4558841d5932316cf56dc3beb58f08084ecb7088a8ee930a04",
+      "table_box": [
+        702,
+        266,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "2",
+      "asset": "2-i9s1p25p1-0.png",
+      "asset_sha256": "7dc927fd5c3aa4c0b5a34b1785de698909b914feb0a94dc6b692ae84c0c25eb2",
+      "threshold_fraction": 0.6,
+      "source": "_76D7A22C-BC3A-435D-BB63-A4AC9AE0A1A0__78803c80.png",
+      "source_sha256": "78803c8043173a4558841d5932316cf56dc3beb58f08084ecb7088a8ee930a04",
+      "table_box": [
+        702,
+        266,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "2",
+      "asset": "2-i9s1p25p1-1.png",
+      "asset_sha256": "7dc927fd5c3aa4c0b5a34b1785de698909b914feb0a94dc6b692ae84c0c25eb2",
+      "threshold_fraction": 0.8,
+      "source": "_76D7A22C-BC3A-435D-BB63-A4AC9AE0A1A0__78803c80.png",
+      "source_sha256": "78803c8043173a4558841d5932316cf56dc3beb58f08084ecb7088a8ee930a04",
+      "table_box": [
+        702,
+        266,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "9",
+      "asset": "9-i10s0p5p0-0.png",
+      "asset_sha256": "3aede1d7b4f204959a0bd9d40be05d97be251d47168da122fa65d27e1afab939",
+      "threshold_fraction": 0.6,
+      "source": "_7C62D925-1CC9-4B7C-A92D-0E3379E07494__3d8f87c2.png",
+      "source_sha256": "3d8f87c2389a8ccaddb75a66e7a61d6b5a4af1250abee0d041c07c270cad8064",
+      "table_box": [
+        689,
+        144,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "9",
+      "asset": "9-i10s0p5p0-1.png",
+      "asset_sha256": "3aede1d7b4f204959a0bd9d40be05d97be251d47168da122fa65d27e1afab939",
+      "threshold_fraction": 0.8,
+      "source": "_7C62D925-1CC9-4B7C-A92D-0E3379E07494__3d8f87c2.png",
+      "source_sha256": "3d8f87c2389a8ccaddb75a66e7a61d6b5a4af1250abee0d041c07c270cad8064",
+      "table_box": [
+        689,
+        144,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "2",
+      "asset": "2-i10s0p5p1-0.png",
+      "asset_sha256": "430ef3067343d995930506c8fab847fac96136ca091a928a664bac80171e7f46",
+      "threshold_fraction": 0.6,
+      "source": "_7C62D925-1CC9-4B7C-A92D-0E3379E07494__3d8f87c2.png",
+      "source_sha256": "3d8f87c2389a8ccaddb75a66e7a61d6b5a4af1250abee0d041c07c270cad8064",
+      "table_box": [
+        689,
+        144,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "2",
+      "asset": "2-i10s0p5p1-1.png",
+      "asset_sha256": "a7547d524fb6da39fc1955265a2b3bf91ac14f581303c8fd02f01e3be5c05b4c",
+      "threshold_fraction": 0.8,
+      "source": "_7C62D925-1CC9-4B7C-A92D-0E3379E07494__3d8f87c2.png",
+      "source_sha256": "3d8f87c2389a8ccaddb75a66e7a61d6b5a4af1250abee0d041c07c270cad8064",
+      "table_box": [
+        689,
+        144,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "9",
+      "asset": "9-i10s0p75p0-0.png",
+      "asset_sha256": "0b050632e83804350dc2f768b0b13429bfb2d29695af3ee106b1ce994b2524af",
+      "threshold_fraction": 0.6,
+      "source": "_7C62D925-1CC9-4B7C-A92D-0E3379E07494__3d8f87c2.png",
+      "source_sha256": "3d8f87c2389a8ccaddb75a66e7a61d6b5a4af1250abee0d041c07c270cad8064",
+      "table_box": [
+        689,
+        144,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "9",
+      "asset": "9-i10s0p75p0-1.png",
+      "asset_sha256": "0b050632e83804350dc2f768b0b13429bfb2d29695af3ee106b1ce994b2524af",
+      "threshold_fraction": 0.8,
+      "source": "_7C62D925-1CC9-4B7C-A92D-0E3379E07494__3d8f87c2.png",
+      "source_sha256": "3d8f87c2389a8ccaddb75a66e7a61d6b5a4af1250abee0d041c07c270cad8064",
+      "table_box": [
+        689,
+        144,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "2",
+      "asset": "2-i10s0p75p1-0.png",
+      "asset_sha256": "60af179443f912864e14d7050cefb681b4d390e7697882873a723ca16616f51a",
+      "threshold_fraction": 0.6,
+      "source": "_7C62D925-1CC9-4B7C-A92D-0E3379E07494__3d8f87c2.png",
+      "source_sha256": "3d8f87c2389a8ccaddb75a66e7a61d6b5a4af1250abee0d041c07c270cad8064",
+      "table_box": [
+        689,
+        144,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "2",
+      "asset": "2-i10s0p75p1-1.png",
+      "asset_sha256": "3670ca5a664a0c1f100250a20de2225ec088b03dc34be5ba00730dffa3ff7c6c",
+      "threshold_fraction": 0.8,
+      "source": "_7C62D925-1CC9-4B7C-A92D-0E3379E07494__3d8f87c2.png",
+      "source_sha256": "3d8f87c2389a8ccaddb75a66e7a61d6b5a4af1250abee0d041c07c270cad8064",
+      "table_box": [
+        689,
+        144,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "9",
+      "asset": "9-i10s1p25p0-0.png",
+      "asset_sha256": "6fd70920447a06b4a9a04aea1c6495258d1b3f3b26d57d3993465f91708e0e4f",
+      "threshold_fraction": 0.6,
+      "source": "_7C62D925-1CC9-4B7C-A92D-0E3379E07494__3d8f87c2.png",
+      "source_sha256": "3d8f87c2389a8ccaddb75a66e7a61d6b5a4af1250abee0d041c07c270cad8064",
+      "table_box": [
+        689,
+        144,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "9",
+      "asset": "9-i10s1p25p0-1.png",
+      "asset_sha256": "6fd70920447a06b4a9a04aea1c6495258d1b3f3b26d57d3993465f91708e0e4f",
+      "threshold_fraction": 0.8,
+      "source": "_7C62D925-1CC9-4B7C-A92D-0E3379E07494__3d8f87c2.png",
+      "source_sha256": "3d8f87c2389a8ccaddb75a66e7a61d6b5a4af1250abee0d041c07c270cad8064",
+      "table_box": [
+        689,
+        144,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "2",
+      "asset": "2-i10s1p25p1-0.png",
+      "asset_sha256": "f7293254dfd7db2d12fd46ac03aadff0b62f774ca507b6ad86e13a8a7192ed36",
+      "threshold_fraction": 0.6,
+      "source": "_7C62D925-1CC9-4B7C-A92D-0E3379E07494__3d8f87c2.png",
+      "source_sha256": "3d8f87c2389a8ccaddb75a66e7a61d6b5a4af1250abee0d041c07c270cad8064",
+      "table_box": [
+        689,
+        144,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "2",
+      "asset": "2-i10s1p25p1-1.png",
+      "asset_sha256": "61f6a1a30906d869bff678771a8539ec48f942f13f31a95adf52a875736a0637",
+      "threshold_fraction": 0.8,
+      "source": "_7C62D925-1CC9-4B7C-A92D-0E3379E07494__3d8f87c2.png",
+      "source_sha256": "3d8f87c2389a8ccaddb75a66e7a61d6b5a4af1250abee0d041c07c270cad8064",
+      "table_box": [
+        689,
+        144,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "7",
+      "asset": "7-i14s0p5p0-0.png",
+      "asset_sha256": "1c4dc5b5923dcd6e22b94bdf6bbc6e3481768fdfa1af57a3cd5fb8d0b82700cc",
+      "threshold_fraction": 0.6,
+      "source": "_C998F597-5786-40A5-A73B-E450730D847E__475524bf.png",
+      "source_sha256": "475524bf61a48c2662d1b27b2efa2fa1b40af9e5972b1ed68b0c4999a0a0d6aa",
+      "table_box": [
+        724,
+        183,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "7",
+      "asset": "7-i14s0p5p0-1.png",
+      "asset_sha256": "1c4dc5b5923dcd6e22b94bdf6bbc6e3481768fdfa1af57a3cd5fb8d0b82700cc",
+      "threshold_fraction": 0.8,
+      "source": "_C998F597-5786-40A5-A73B-E450730D847E__475524bf.png",
+      "source_sha256": "475524bf61a48c2662d1b27b2efa2fa1b40af9e5972b1ed68b0c4999a0a0d6aa",
+      "table_box": [
+        724,
+        183,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "6",
+      "asset": "6-i14s0p5p1-0.png",
+      "asset_sha256": "107491de5ceac905e37fcc1e35e9fc69f41429e5ae9035cbb82c04bee38b08fc",
+      "threshold_fraction": 0.6,
+      "source": "_C998F597-5786-40A5-A73B-E450730D847E__475524bf.png",
+      "source_sha256": "475524bf61a48c2662d1b27b2efa2fa1b40af9e5972b1ed68b0c4999a0a0d6aa",
+      "table_box": [
+        724,
+        183,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "6",
+      "asset": "6-i14s0p5p1-1.png",
+      "asset_sha256": "107491de5ceac905e37fcc1e35e9fc69f41429e5ae9035cbb82c04bee38b08fc",
+      "threshold_fraction": 0.8,
+      "source": "_C998F597-5786-40A5-A73B-E450730D847E__475524bf.png",
+      "source_sha256": "475524bf61a48c2662d1b27b2efa2fa1b40af9e5972b1ed68b0c4999a0a0d6aa",
+      "table_box": [
+        724,
+        183,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.5,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "7",
+      "asset": "7-i14s0p75p0-0.png",
+      "asset_sha256": "9434e5d6a606e2e1bd4b47c32498445bc4c2fa36190f550884b4403db23ccbe2",
+      "threshold_fraction": 0.6,
+      "source": "_C998F597-5786-40A5-A73B-E450730D847E__475524bf.png",
+      "source_sha256": "475524bf61a48c2662d1b27b2efa2fa1b40af9e5972b1ed68b0c4999a0a0d6aa",
+      "table_box": [
+        724,
+        183,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "7",
+      "asset": "7-i14s0p75p0-1.png",
+      "asset_sha256": "9434e5d6a606e2e1bd4b47c32498445bc4c2fa36190f550884b4403db23ccbe2",
+      "threshold_fraction": 0.8,
+      "source": "_C998F597-5786-40A5-A73B-E450730D847E__475524bf.png",
+      "source_sha256": "475524bf61a48c2662d1b27b2efa2fa1b40af9e5972b1ed68b0c4999a0a0d6aa",
+      "table_box": [
+        724,
+        183,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "6",
+      "asset": "6-i14s0p75p1-0.png",
+      "asset_sha256": "ca0bee85e972fa55a5b69e4940f5285033366c4eb191c9b34bd972a0cff8188a",
+      "threshold_fraction": 0.6,
+      "source": "_C998F597-5786-40A5-A73B-E450730D847E__475524bf.png",
+      "source_sha256": "475524bf61a48c2662d1b27b2efa2fa1b40af9e5972b1ed68b0c4999a0a0d6aa",
+      "table_box": [
+        724,
+        183,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "6",
+      "asset": "6-i14s0p75p1-1.png",
+      "asset_sha256": "ca0bee85e972fa55a5b69e4940f5285033366c4eb191c9b34bd972a0cff8188a",
+      "threshold_fraction": 0.8,
+      "source": "_C998F597-5786-40A5-A73B-E450730D847E__475524bf.png",
+      "source_sha256": "475524bf61a48c2662d1b27b2efa2fa1b40af9e5972b1ed68b0c4999a0a0d6aa",
+      "table_box": [
+        724,
+        183,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 0.75,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "7",
+      "asset": "7-i14s1p25p0-0.png",
+      "asset_sha256": "aa634f3edf39da96c9f17ce7d1c76b5f52c9e5a8e1c216b3afcb998b067b2386",
+      "threshold_fraction": 0.6,
+      "source": "_C998F597-5786-40A5-A73B-E450730D847E__475524bf.png",
+      "source_sha256": "475524bf61a48c2662d1b27b2efa2fa1b40af9e5972b1ed68b0c4999a0a0d6aa",
+      "table_box": [
+        724,
+        183,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "7",
+      "asset": "7-i14s1p25p0-1.png",
+      "asset_sha256": "aa634f3edf39da96c9f17ce7d1c76b5f52c9e5a8e1c216b3afcb998b067b2386",
+      "threshold_fraction": 0.8,
+      "source": "_C998F597-5786-40A5-A73B-E450730D847E__475524bf.png",
+      "source_sha256": "475524bf61a48c2662d1b27b2efa2fa1b40af9e5972b1ed68b0c4999a0a0d6aa",
+      "table_box": [
+        724,
+        183,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        402,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "6",
+      "asset": "6-i14s1p25p1-0.png",
+      "asset_sha256": "1d2fd2a23edaa5f3c22222307b473813a1634d3533e9d5793e89ecdb492d8c75",
+      "threshold_fraction": 0.6,
+      "source": "_C998F597-5786-40A5-A73B-E450730D847E__475524bf.png",
+      "source_sha256": "475524bf61a48c2662d1b27b2efa2fa1b40af9e5972b1ed68b0c4999a0a0d6aa",
+      "table_box": [
+        724,
+        183,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "6",
+      "asset": "6-i14s1p25p1-1.png",
+      "asset_sha256": "1d2fd2a23edaa5f3c22222307b473813a1634d3533e9d5793e89ecdb492d8c75",
+      "threshold_fraction": 0.8,
+      "source": "_C998F597-5786-40A5-A73B-E450730D847E__475524bf.png",
+      "source_sha256": "475524bf61a48c2662d1b27b2efa2fa1b40af9e5972b1ed68b0c4999a0a0d6aa",
+      "table_box": [
+        724,
+        183,
+        703,
+        1237
+      ],
+      "roi_canonical": [
+        447,
+        1010,
+        42,
+        60
+      ],
+      "scale": 1.25,
+      "label_basis": "Transformed existing labeled training screenshot; not independent evidence",
+      "role": "candidate"
+    },
+    {
+      "rank": "8",
+      "asset": "8-0.png",
+      "asset_sha256": "845687d623e0f2f499d455603211308197cea9080a9283890ceaee40ce57d1c8",
+      "threshold_fraction": 0.6,
+      "source": "_8C143E80-F85C-4DE6-ADCD-0641771AE2E6__2a4e7ea0.png",
+      "source_sha256": "2a4e7ea0153b94c241a76bd73f2f88b147504ca779cf0e99f48686b54a7d1d49",
+      "table_box": [
+        703,
+        54,
+        703,
+        1237
+      ],
+      "board_card_box": [
+        219,
+        471,
+        78,
+        115
+      ],
+      "face_roi": [
+        4,
+        3,
+        40,
+        50
+      ],
+      "label_basis": "Manually labeled real board 2s/8h/5h",
+      "role": "competitor_only"
+    },
+    {
+      "rank": "8",
+      "asset": "8-1.png",
+      "asset_sha256": "845687d623e0f2f499d455603211308197cea9080a9283890ceaee40ce57d1c8",
+      "threshold_fraction": 0.8,
+      "source": "_8C143E80-F85C-4DE6-ADCD-0641771AE2E6__2a4e7ea0.png",
+      "source_sha256": "2a4e7ea0153b94c241a76bd73f2f88b147504ca779cf0e99f48686b54a7d1d49",
+      "table_box": [
+        703,
+        54,
+        703,
+        1237
+      ],
+      "board_card_box": [
+        219,
+        471,
+        78,
+        115
+      ],
+      "face_roi": [
+        4,
+        3,
+        40,
+        50
+      ],
+      "label_basis": "Manually labeled real board 2s/8h/5h",
+      "role": "competitor_only"
+    }
+  ]
+}

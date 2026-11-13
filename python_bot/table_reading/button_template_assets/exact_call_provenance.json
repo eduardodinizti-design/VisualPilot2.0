@@ -1,0 +1,36 @@
+{
+  "label": "Call 1,0 BB",
+  "asset": "Call_1_0_BB_exact.png",
+  "asset_sha256": "0fb19784d08aa4bf19ea126c0daa687c78c6c881e3b3458c23c75b94662bd7e1",
+  "native_ink_shape": [
+    24,
+    123
+  ],
+  "clean_ink_shape": [
+    72,
+    369
+  ],
+  "preprocessing": "Whole native thresholded ink, existing integer nearest-neighbor enlargement3; no matching-time rescale or normalization",
+  "training_source": "_4528A8B5-F81C-4078-A8DB-C7ADBD91C311__85ee615d.png",
+  "training_source_sha256": "85ee615d31918032b5782e88ed0e9370ec1c1f28b451457ed2f7dcba66e49c09",
+  "table_box": [
+    674,
+    100,
+    703,
+    1237
+  ],
+  "button_box": [
+    242,
+    1158,
+    219,
+    65
+  ],
+  "evaluation_sources": [
+    "_58CB106F-09EA-4853-B7D9-98FD582FAD0E__581ae999.png",
+    "_76D7A22C-BC3A-435D-BB63-A4AC9AE0A1A0__78803c80.png"
+  ],
+  "evaluation_source_sha256": {
+    "_58CB106F-09EA-4853-B7D9-98FD582FAD0E__581ae999.png": "581ae999225a9e7e442a7ffffab745f429b7f8b37e1104052329014afe9afbee",
+    "_76D7A22C-BC3A-435D-BB63-A4AC9AE0A1A0__78803c80.png": "78803c8043173a4558841d5932316cf56dc3beb58f08084ecb7088a8ee930a04"
+  }
+}

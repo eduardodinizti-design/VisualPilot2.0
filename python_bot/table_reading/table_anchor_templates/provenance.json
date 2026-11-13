@@ -1,0 +1,41 @@
+{
+  "source": "public/assets/aistudio/_21D744E1-8BE6-4C79-82AF-5582DD6A9547__6988a9e2.png",
+  "sha256": "6988a9e2826610295041b34feeca5a97e5e0ad490c1ee42183b33a2eed111abd",
+  "training_crop": [
+    11,
+    36,
+    703,
+    1237
+  ],
+  "canonical_size": [
+    400,
+    704
+  ],
+  "regions": {
+    "menu": [
+      0,
+      0,
+      65,
+      70
+    ],
+    "signal": [
+      335,
+      0,
+      65,
+      70
+    ],
+    "cards": [
+      0,
+      590,
+      60,
+      60
+    ],
+    "chat": [
+      340,
+      590,
+      60,
+      60
+    ]
+  },
+  "scope": "Development template from one blue PPPoker screenshot; not independent validation"
+}

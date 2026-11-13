@@ -1,1 +1,1 @@
-# table_reading package
+"""Experimental blue-layout detection and Hero reading. No actions."""

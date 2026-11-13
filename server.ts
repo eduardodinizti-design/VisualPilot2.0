@@ -148,7 +148,11 @@ async function startServer() {
     botLogs.unshift(`[${new Date().toLocaleTimeString()}] [START] Iniciando python ${args.join(" ")}`);
 
     try {
-      botProcess = spawn("python", args, { shell: true });
+      botProcess = spawn("python", args, { 
+        shell: true,
+        cwd: path.resolve(process.cwd(), "python_bot"),
+        env: { ...process.env, PYTHONPATH: path.resolve(process.cwd(), "python_bot") }
+      });
 
       botProcess.stdout?.on("data", (data) => {
         const text = data.toString().trim();
@@ -208,7 +212,11 @@ async function startServer() {
     botLogs.unshift(`[${new Date().toLocaleTimeString()}] [TOURNAMENT] Iniciando rotina python tournament_rotina.py`);
 
     try {
-      const tourneyProcess = spawn("python", args, { shell: true });
+      const tourneyProcess = spawn("python", args, { 
+        shell: true,
+        cwd: path.resolve(process.cwd(), "python_bot"),
+        env: { ...process.env, PYTHONPATH: path.resolve(process.cwd(), "python_bot") }
+      });
       tourneyProcess.stdout?.on("data", (data) => {
         const text = data.toString().trim();
         if (text) {
