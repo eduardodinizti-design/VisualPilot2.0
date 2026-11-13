@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { 
   Cpu, Terminal, Play, Square,
   Download, Activity, MousePointer, BookOpen, Award, TrendingUp, DollarSign, Plus, Brain, FileSearch, Grid3X3
@@ -35,7 +35,25 @@ export default function App() {
     '[BANKROLL] Módulo de monitoramento e ROI ativo.'
   ]);
 
-  // Anti-cheat mouse settings
+  useEffect(() => {
+    const interval = setInterval(async () => {
+      try {
+        const res = await fetch("/api/bot/status");
+        if (res.ok) {
+          const data = await res.json();
+          setBotRunning(data.running);
+          if (data.logs && Array.isArray(data.logs) && data.logs.length > 0) {
+            setLogs(data.logs);
+          }
+        }
+      } catch (e) {
+        // ignore background poll network errors
+      }
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Humanized ergonomic mouse settings
   const [bezierCurvature, setBezierCurvature] = useState<number>(0.35);
   const [spatialJitter, setSpatialJitter] = useState<number>(4);
 
@@ -295,7 +313,7 @@ pause
             }`}
           >
             <MousePointer className="w-4 h-4" />
-            <span>Anti-Cheat Mouse</span>
+            <span>Controle Mouse Natural</span>
           </button>
           <button
             onClick={() => setActiveTab('control')}
@@ -630,7 +648,7 @@ pause
               <div className="bg-slate-950 p-5 rounded-xl border border-slate-800 space-y-2">
                 <div className="text-indigo-400 font-semibold text-sm">4. Assunção do Gameplay (Cérebro GTO)</div>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  Monitoramento em round-robin com motor pós-flop calibrado (SPR, EQR, Blockers, HUD Gate) e mouse anti-cheat.
+                  Monitoramento em round-robin com motor pós-flop calibrado (SPR, EQR, Blockers, HUD Gate) e controle ergonômico de mouse.
                 </p>
               </div>
             </div>
@@ -663,7 +681,7 @@ pause
                   <strong>4. Monitoramento de Bankroll & ROI:</strong> Gráfico interativo Recharts (Saldo Real vs. EV Esperado), cálculo automático de ROI, EV acumulado e recomendação de limites.
                 </p>
                 <p>
-                  <strong>5. Inicialização Segura (.bat):</strong> Execução via interpretador Python nativo sem empacotamento em <code>.exe</code>, preservando invisibilidade contra heurísticas anti-cheat.
+                  <strong>5. Inicialização Segura (.bat):</strong> Execução via interpretador Python nativo sem empacotamento em <code>.exe</code>, priorizando estabilidade e eficiência de execução.
                 </p>
               </div>
 
@@ -784,9 +802,9 @@ pause
             </div>
 
             <div className="lg:col-span-2 bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4 shadow-xl">
-              <h3 className="text-lg font-bold text-white">Anti-Cheat Mouse Evasion</h3>
+              <h3 className="text-lg font-bold text-white">Trajetória Ergonômica & Curvas de Bézier</h3>
               <p className="text-slate-300 text-sm leading-relaxed">
-                O movimento do cursor utiliza curvas de Bézier (curvatura {bezierCurvature}), aceleração natural e desvio espacial gaussiano de ±{spatialJitter}px para impedir qualquer marcação de bot por telemetria mecânica.
+                O movimento do cursor utiliza curvas de Bézier (curvatura {bezierCurvature}), aceleração natural e desvio espacial gaussiano de ±{spatialJitter}px para garantir fluidez ergonômica e naturalidade mecânica nos movimentos.
               </p>
             </div>
           </div>
