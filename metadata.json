@@ -1,0 +1,6 @@
+{
+  "name": "Poker GTO Pro Suite & Trainer",
+  "description": "Interactive GTO range matrix, postflop equity calculator, PKO bounty manager, and session tracker built for professional poker training.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
