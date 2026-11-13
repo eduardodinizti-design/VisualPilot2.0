@@ -1,0 +1,39 @@
+[
+  {
+    "argv": [
+      "--hwnd",
+      "0x12FA,",
+      "0x34BC",
+      "--bounty-bb",
+      "--overlay",
+      "--human-mouse"
+    ],
+    "exit": 2,
+    "error": "operar_mesa.py: error: argument --hwnd: invalid <lambda> value: '0x12FA,'"
+  },
+  {
+    "argv": [
+      "--hwnd",
+      "0x12FA",
+      "0x34BC",
+      "--bounty-bb",
+      "--overlay",
+      "--human-mouse"
+    ],
+    "exit": 2,
+    "error": "operar_mesa.py: error: argument --bounty-bb: expected one argument"
+  },
+  {
+    "argv": [
+      "--hwnd",
+      "0x12FA",
+      "0x34BC",
+      "--bounty-bb",
+      "1",
+      "--overlay",
+      "--human-mouse"
+    ],
+    "exit": 2,
+    "error": "operar_mesa.py: error: unrecognized arguments: --human-mouse"
+  }
+]
