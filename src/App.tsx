@@ -125,25 +125,44 @@ export default function App() {
     });
   }, [bankrollEntries]);
 
-  const toggleBot = () => {
-    if (!botRunning) {
-      setBotRunning(true);
-      setLogs(prev => [`[${new Date().toLocaleTimeString()}] [START] Sessão ativada.`, ...prev]);
-    } else {
-      setBotRunning(false);
-      setLogs(prev => [`[${new Date().toLocaleTimeString()}] [STOP] Sessão pausada.`, ...prev]);
+  const toggleBot = async () => {
+    try {
+      if (!botRunning) {
+        const res = await fetch("/api/bot/start", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ hwnd: hwndList, bounty: bountyMode, overlay: overlayActive, mouse: true }),
+        });
+        const data = await res.json();
+        if (data.success) {
+          setBotRunning(true);
+          setLogs(prev => [`[${new Date().toLocaleTimeString()}] [START] ${data.message}`, ...prev]);
+        } else {
+          setLogs(prev => [`[${new Date().toLocaleTimeString()}] [ERROR] ${data.error || 'Falha ao iniciar bot.'}`, ...prev]);
+        }
+      } else {
+        const res = await fetch("/api/bot/stop", { method: "POST" });
+        const data = await res.json();
+        setBotRunning(false);
+        setLogs(prev => [`[${new Date().toLocaleTimeString()}] [STOP] ${data.message || 'Sessão encerrada.'}`, ...prev]);
+      }
+    } catch (err) {
+      setLogs(prev => [`[${new Date().toLocaleTimeString()}] [ERROR] Falha de comunicação com a ponte do bot.`, ...prev]);
     }
   };
 
   const batScriptContent = `@echo off
-TITLE Poker Automation Bot - Liga Evolution & Clube do Carecas
+TITLE VisualPilot 2.0 - Liga Evolution & Clube do Carecas
 COLOR 0A
 echo ==========================================
-echo    POLARIS POKER - SESSAO DE TORNEIOS
+echo    VISUALPILOT 2.0 - SESSAO DE TORNEIOS
 echo ==========================================
 echo [INFO] Clube: Clube do Carecas (Liga Evolution)
 echo [INFO] HWNDs: ${hwndList}
-python operar_mesa.py --hwnd ${hwndList} ${bountyMode ? '--bounty-bb' : ''} ${overlayActive ? '--overlay' : ''} --human-mouse
+echo [INFO] Executando rotina de inscricao e torneios...
+python python_bot/tournament_rotina.py
+echo [INFO] Iniciando agente de mesas operar_mesa.py...
+python python_bot/operar_mesa.py --hwnd ${hwndList} ${bountyMode ? '--bounty-bb' : ''} ${overlayActive ? '--overlay' : ''} --human-mouse
 pause
 `;
 

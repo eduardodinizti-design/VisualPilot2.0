@@ -1,10 +1,17 @@
 import "dotenv/config";
 import express from "express";
 import path from "path";
+import { spawn, ChildProcess } from "child_process";
 import { GoogleGenAI, Type } from "@google/genai";
 
 const PORT = 3000;
 const MAX_HAND_HISTORY_CHARS = 90000;
+
+let botProcess: ChildProcess | null = null;
+const botLogs: string[] = [
+  "[INIT] Servidor Express e ponte Python inicializados.",
+  "[BRIDGE] Aguardando comando para iniciar operar_mesa.py."
+];
 
 interface AnalyzeHandsRequest {
   handHistoryText?: string;
@@ -123,6 +130,75 @@ const RESPONSE_SCHEMA = {
 async function startServer() {
   const app = express();
   app.use(express.json({ limit: "5mb" }));
+
+  // Python Bot Bridge Endpoints
+  app.post("/api/bot/start", (req, res) => {
+    if (botProcess && !botProcess.killed) {
+      return res.json({ success: true, running: true, message: "O bot python já está em execução." });
+    }
+
+    const { hwnd = "0x12FA", bounty = true, overlay = true, mouse = true } = req.body || {};
+    const scriptPath = path.resolve(process.cwd(), "python_bot", "operar_mesa.py");
+    
+    const args = [scriptPath, "--hwnd", String(hwnd)];
+    if (bounty) args.push("--bounty-bb");
+    if (overlay) args.push("--overlay");
+    if (mouse) args.push("--human-mouse");
+
+    botLogs.unshift(`[${new Date().toLocaleTimeString()}] [START] Iniciando python ${args.join(" ")}`);
+
+    try {
+      botProcess = spawn("python", args, { shell: true });
+
+      botProcess.stdout?.on("data", (data) => {
+        const text = data.toString().trim();
+        if (text) {
+          console.log(`[Python OUT] ${text}`);
+          botLogs.unshift(`[${new Date().toLocaleTimeString()}] ${text}`);
+          if (botLogs.length > 100) botLogs.pop();
+        }
+      });
+
+      botProcess.stderr?.on("data", (data) => {
+        const text = data.toString().trim();
+        if (text) {
+          console.error(`[Python ERR] ${text}`);
+          botLogs.unshift(`[${new Date().toLocaleTimeString()}] [ERR] ${text}`);
+          if (botLogs.length > 100) botLogs.pop();
+        }
+      });
+
+      botProcess.on("close", (code) => {
+        botLogs.unshift(`[${new Date().toLocaleTimeString()}] [STOP] Processo python encerrado (código ${code}).`);
+        botProcess = null;
+      });
+
+      return res.json({ success: true, running: true, message: "Sessão do bot iniciada com sucesso via Python." });
+    } catch (err) {
+      console.error("Failed to start python bot:", err);
+      return res.status(500).json({ success: false, error: "Falha ao iniciar o processo Python operar_mesa.py." });
+    }
+  });
+
+  app.post("/api/bot/stop", (_req, res) => {
+    if (!botProcess) {
+      return res.json({ success: true, running: false, message: "O bot já está parado." });
+    }
+
+    try {
+      botProcess.kill();
+      botProcess = null;
+      botLogs.unshift(`[${new Date().toLocaleTimeString()}] [STOP] Sessão encerrada manualmente.`);
+      return res.json({ success: true, running: false, message: "Sessão encerrada com sucesso." });
+    } catch (err) {
+      return res.status(500).json({ success: false, error: "Falha ao encerrar processo." });
+    }
+  });
+
+  app.get("/api/bot/status", (_req, res) => {
+    const running = Boolean(botProcess && !botProcess.killed);
+    return res.json({ running, logs: botLogs.slice(0, 30) });
+  });
 
   app.post("/api/analyze-hands", async (req, res) => {
     try {
