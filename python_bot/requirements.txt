@@ -1,10 +1,6 @@
+# Install dependencies via: pip install -r python_bot/requirements.txt
 numpy
 opencv-python
 mss
 psutil
 pyautogui
-pytesseract
-pywin32
-pillow
-requests
-dotenv

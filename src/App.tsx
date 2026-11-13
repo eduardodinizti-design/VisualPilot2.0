@@ -667,7 +667,26 @@ pause
                 <p className="text-xs text-slate-400 font-mono mt-1">Local salvo: /docs/GUIA_FUNCIONAMENTO.md (Sempre atualizado)</p>
               </div>
 
-              <div className="space-y-3 text-xs text-slate-300 leading-relaxed">
+              <div className="space-y-4 text-xs text-slate-300 leading-relaxed">
+                <div className="bg-slate-950 p-4 rounded-xl border border-indigo-500/30 space-y-2">
+                  <span className="text-xs font-bold text-indigo-400">GUIA RÁPIDO: COMO EXECUTAR O BOT HOJE (TESTES NO WINDOWS)</span>
+                  <p className="text-slate-300">
+                    1. Instale o Python 3.10+ no Windows.<br/>
+                    2. Instale dependências: <code className="bg-slate-900 px-1.5 py-0.5 rounded text-emerald-400">pip install -r python_bot/requirements.txt</code><br/>
+                    3. Valide o Bankroll/Torneio: <code className="bg-slate-900 px-1.5 py-0.5 rounded text-emerald-400">python python_bot/tournament_rotina.py --min-buyins 100 --balance 5000 --cost 50</code><br/>
+                    4. Inicie o operador em mesa (modo passivo/dry-run ou armado): <code className="bg-slate-900 px-1.5 py-0.5 rounded text-emerald-400">python python_bot/operar_mesa.py --hwnd 0x12FA --bounty-bb 10.0 --max-tables 6 --arm</code>
+                  </p>
+                </div>
+
+                <div className="bg-slate-950 p-4 rounded-xl border border-emerald-500/30 space-y-2">
+                  <span className="text-xs font-bold text-emerald-450 text-emerald-400">EVOLUÇÃO CIENTÍFICA DO CÉREBRO (SUPERANDO O EMPIRISMO)</span>
+                  <p className="text-slate-300">
+                    Para garantir que o motor não dependa de heurísticas empíricas, a arquitetura foi estruturada com base em dados determinísticos e validados:<br/>
+                    - <strong>Pré-Flop:</strong> Substituição de pontuações estáticas por matrizes HRC/NVT indexadas por stack e Bubble Factor.<br/>
+                    - <strong>Pós-Flop:</strong> Árvore de decisão paramétrica com avaliação de Textura de Board, Range & Nut Advantage, Buckets de Equidade, sizings orientados por solvers (Sizing Geométrico, Overbet 135%, Pot Commit com SPR &le; 1.5) e Mixagem RNG determinística para inexplorabilidade.
+                  </p>
+                </div>
+
                 <p>
                   <strong>1. Cérebro Pré-Flop:</strong> Matriz interativa de 169 mãos com zonas de stack (Deep, Mid-Stack, Re-Shove e Push/Fold Nash &lt;14 BB), Bubble Factor ICM (<code>1.00x–1.55x</code>), Bounty Power PKO, Iso-Raise contra limpers (<code>3.5x + 1x/limper</code>) e HUD Gate de Fold to 3-Bet.
                 </p>

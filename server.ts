@@ -137,19 +137,47 @@ async function startServer() {
       return res.json({ success: true, running: true, message: "O bot python já está em execução." });
     }
 
-    const { hwnd = "0x12FA", bounty = true, overlay = true, mouse = true } = req.body || {};
+    const { hwnd = "0x12FA", bounty = true, bountyMode, overlay = false, mouse = true, reqOverlay, reqHumanMouse } = req.body || {};
+    
+    // Explicitly reject deprecated flags if requested
+    if (overlay || reqOverlay || reqHumanMouse) {
+      return res.status(400).json({ success: false, error: "Flags depreciadas (--overlay ou --human-mouse) são rejeitadas explicitamente." });
+    }
+
     const scriptPath = path.resolve(process.cwd(), "python_bot", "operar_mesa.py");
     
-    const args = [scriptPath, "--hwnd", String(hwnd)];
-    if (bounty) args.push("--bounty-bb");
-    if (overlay) args.push("--overlay");
-    if (mouse) args.push("--human-mouse");
+    // Strict validation layer for HWNDs: alphanumeric only, stripping commas
+    const rawHwnds = String(hwnd).replace(/,/g, " ").trim().split(/\s+/).filter(Boolean);
+    const validHwnds: string[] = [];
+    for (const h of rawHwnds) {
+      const cleanH = h.startsWith("0x") ? h.slice(2) : h;
+      if (/^[0-9a-zA-Z]+$/.test(cleanH)) {
+        validHwnds.push(h);
+      }
+    }
 
-    botLogs.unshift(`[${new Date().toLocaleTimeString()}] [START] Iniciando python ${args.join(" ")}`);
+    if (validHwnds.length === 0) {
+      validHwnds.push("0x12FA");
+    }
+
+    const cliArgs = ["--hwnd", ...validHwnds];
+
+    const activeBounty = bountyMode !== undefined ? bountyMode : bounty;
+    if (activeBounty) {
+      const bountyVal = typeof activeBounty === "number" ? String(activeBounty) : "10";
+      cliArgs.push("--bounty-bb", bountyVal);
+    }
+
+    if (mouse) {
+      cliArgs.push("--arm");
+    }
+    cliArgs.push("--max-tables", "6");
+
+    botLogs.unshift(`[${new Date().toLocaleTimeString()}] [START] Iniciando python3 operar_mesa.py ${cliArgs.join(" ")}`);
 
     try {
-      botProcess = spawn("python", args, { 
-        shell: true,
+      botProcess = spawn("python3", [scriptPath, ...cliArgs], { 
+        shell: false,
         cwd: path.resolve(process.cwd(), "python_bot"),
         env: { ...process.env, PYTHONPATH: path.resolve(process.cwd(), "python_bot") }
       });
