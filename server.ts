@@ -200,6 +200,35 @@ async function startServer() {
     return res.json({ running, logs: botLogs.slice(0, 30) });
   });
 
+  app.post("/api/bot/register-tournaments", (req, res) => {
+    const scriptPath = path.resolve(process.cwd(), "python_bot", "tournament_rotina.py");
+    const { minBankroll = 100 } = req.body || {};
+    const args = [scriptPath, "--min-bankroll", String(minBankroll)];
+
+    botLogs.unshift(`[${new Date().toLocaleTimeString()}] [TOURNAMENT] Iniciando rotina python tournament_rotina.py`);
+
+    try {
+      const tourneyProcess = spawn("python", args, { shell: true });
+      tourneyProcess.stdout?.on("data", (data) => {
+        const text = data.toString().trim();
+        if (text) {
+          botLogs.unshift(`[${new Date().toLocaleTimeString()}] [Tourney] ${text}`);
+          if (botLogs.length > 100) botLogs.pop();
+        }
+      });
+      tourneyProcess.stderr?.on("data", (data) => {
+        const text = data.toString().trim();
+        if (text) {
+          botLogs.unshift(`[${new Date().toLocaleTimeString()}] [Tourney ERR] ${text}`);
+          if (botLogs.length > 100) botLogs.pop();
+        }
+      });
+      return res.json({ success: true, message: "Rotina de torneios e bankroll iniciada com sucesso." });
+    } catch (err) {
+      return res.status(500).json({ success: false, error: "Falha ao executar rotina de torneios." });
+    }
+  });
+
   app.post("/api/analyze-hands", async (req, res) => {
     try {
       if (!process.env.GEMINI_API_KEY) {
