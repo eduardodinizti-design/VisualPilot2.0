@@ -1,0 +1,342 @@
+AUDITORIA DE INTEGRIDADE — VISUALPILOT 2.0
+Data: 13/11/2026
+Repositório: eduardodinizti-design/VisualPilot2.0
+Versão examinada: main, 458204d78976209471174cf632aef9ec56bdbfd6
+Referência operacional anterior: Software, 4687e68debe98764c2e6ba3275c626157e9dbad3
+
+PARECER
+
+Consegui acessar, instalar, compilar, iniciar e navegar pelo VisualPilot 2.0.
+Ele oferece uma base visual útil para estudo: matriz pré-flop, cenários,
+diagnósticos, laboratório pós-flop, importação de texto e replayer.
+
+Porém, esta versão ainda é um protótipo web. Não há integração implementada
+entre o botão de sessão e o agente Windows. Não há consulta aos arquivos
+HRC/NVT nos novos motores. Existem erros objetivos de ação, sizing e leitura
+de histórico. Não recomendo substituir o agente anterior por esta versão.
+
+“O sistema ficou melhor?” Melhorou a apresentação e a possibilidade de
+inspecionar cenários. Não foi demonstrada melhora na qualidade estratégica,
+na execução ou na leitura do PPPoker. O novo código não herda automaticamente
+as correções, testes e contratos do projeto Python.
+
+“Irá funcionar?” Como painel/laboratório, foi executado no Linux. Como bot
+completo na máquina Windows, esta revisão não sustenta essa conclusão.
+Há funcionalidades operacionais descritas no manual que não estão no código.
+
+ESCOPO E PRESERVAÇÃO
+
+Comandos e acesso ao GitHub foram confirmados. O repositório novo foi clonado
+em diretório isolado. HEAD e status foram conferidos antes das alterações.
+Não há AGENTS.md versionado no novo repositório. As convenções do projeto
+anterior foram consultadas como referência, inclusive a distinção entre
+laboratório e Windows e a preferência por entrega no GitHub.
+
+O checkout antigo com trabalho local em /workspace/software-review não foi
+alterado: continuava em e922e33, na branch fix/observer-integration, com seus
+arquivos modificados/não rastreados. Não houve reset, limpeza ou stash.
+Nenhum código operacional foi corrigido nesta auditoria; a entrega contém
+somente relatório e evidências. Não foram enviados cliques a mesas reais.
+
+Este é outro repositório, com outro histórico. A comparação com Software é
+de capacidades e contratos, não um git diff de uma evolução linear. O commit
+f0beee374a694aaf8a06e8ca15c9508bc4652796 é uma referência histórica anterior;
+não foi usada como se fosse o pai desta aplicação web.
+
+O QUE ESTÁ IMPLEMENTADO
+
+1. Frontend React com navegação por abas e controles de cenário.
+2. Matriz de 169 classes de mãos, calculada por regras locais.
+3. Cenários pré-flop RFI, limpers, open, 3-bet e shove.
+4. Laboratório pós-flop com categorias manuais, SPR, outs e frequências.
+5. Importação/colagem de histórico e replayer local com passos por street.
+6. Endpoint Express que prepara uma análise de histórico via Gemini.
+7. Formulário de resultados e gráficos com estado em memória.
+8. Geração de um arquivo .bat, embora incompatível com a CLI anterior.
+
+RESULTADOS DOS TESTES EXECUTADOS
+
+Ambiente: Linux; Node 24.19.0; Bun 1.4.4 via npx; Chromium headless.
+
+- npm install --ignore-scripts --package-lock=false: FALHOU com ERESOLVE.
+  Há conflito entre o esbuild ^0.25 declarado e o peer opcional do Vite
+  resolvido pelo npm. Isso não impediu a instalação pelo lockfile Bun.
+- npx --yes bun install --frozen-lockfile --ignore-scripts: PASSOU.
+  218 pacotes instalados. Um postinstall permaneceu bloqueado.
+- npm run lint: PASSOU. Esse comando executa tsc --noEmit; não é uma suíte
+  de testes de poker nem um linter completo de comportamento.
+- npm run build: PASSOU. Avisos de compatibilidade futura de __dirname e
+  bundle JS de aproximadamente 762 kB antes de gzip.
+- npm run dev: servidor iniciou; GET / respondeu HTTP 200.
+- NODE_ENV=production npm start: iniciou sob Node 24; GET / respondeu 200.
+- Chromium: abas pré-flop, pós-flop e análise abriram sem erros JavaScript
+  não tratados no percurso executado. Exemplo foi carregado e avançou no
+  replayer. Isso não valida o parser para históricos reais arbitrários.
+- “Iniciar Sessão”: mostrou “Sessão Ativa” sem qualquer requisição à API;
+  recarregar a página voltou ao estado inicial.
+- Análise de mãos sem chave: HTTP 500 com mensagem de chave ausente;
+  a interface mostrou esse erro. Não foi feito consumo de API Gemini.
+- Sondas locais de motor/parser: resultados em probes.json, reproduzidos
+  pelo arquivo probes.ts. Não existia script test nem suíte versionada
+  no checkout original.
+- Launcher contra a CLI de Software/4687e68: três incompatibilidades
+  reproduzidas separadamente, todas com saída 2. Ver launcher.json.
+
+Não executei sessões reais no PPPoker Windows, captura de mesas, cliques,
+inscrições, observação simultânea ou benchmark de seis/doze/dezesseis mesas.
+Não validei acesso ao modelo Gemini configurado, pois não havia chave local.
+
+ACHADOS QUE BLOQUEIAM A APROVAÇÃO OPERACIONAL
+
+P1-01 — SESSÃO VISUAL SEM AGENTE CONECTADO
+Fonte: src/App.tsx:128 e server.ts.
+toggleBot apenas altera useState e acrescenta mensagens locais. O backend
+expõe análise de mãos, não um protocolo de captura, estado, execução ou
+controle do agente Windows. Não existe confirmação de que o agente iniciou.
+O registro automático em torneios aparece como texto na aba Rotina; não há
+implementação de seleção, pagamento de inscrição ou verificação de sucesso.
+Melhoria: identificar explicitamente modo demonstração/desconectado.
+Qualquer futura sessão operacional deve depender de estado confirmado pelo
+agente local, com pausa, reconexão e mensagens de falha verificáveis.
+
+P1-02 — RANGES DO NOVO MOTOR NÃO VÊM DO HRC/NVT
+Fonte: src/utils/preflopEngine.ts:133, 202, 220 e 338.
+As classes são pontuadas por Chen, ajustes e limiares definidos no código.
+“Equity vs Range” é uma função do score, não uma avaliação contra um range
+efetivamente carregado. Não há importação dos packs, manifesto, hash, nó
+consultado, cobertura ou distinção entre referência validada e heurística.
+ICM usa fatores constantes por fase; não usa payouts e distribuição completa
+de stacks. PKO usa um bônus fixo proporcional ao bounty informado.
+Essas aproximações não demonstram uma solução GTO/Nash/ICM/PKO correta.
+Melhoria: o painel deve consumir a mesma fonte estratégica validada do
+projeto operacional. Exibir origem, versão, contexto, cobertura e abstenção.
+Uma matriz colorida por fórmula não resolve a reclamação de ranges ignorados.
+
+P1-03 — CONTEXTO PRÉ-FLOP INCOMPLETO
+Fonte: src/utils/preflopEngine.ts:1-21 e classifyCellForScenario.
+Há cenário específico para dois/três limpers, o que facilita estudar esse
+caso visualmente. Porém não existe histórico ordenado de ações, open mais
+dois calls, squeeze multiway, tamanhos reais de 3-bet/4-bet ou vetor de stacks.
+As posições representam seis assentos; não modelam integralmente 8/9-max.
+Sonda: alterar open de 2 para 6 BB no mesmo contexto alterou ZERO das 169
+ações da matriz. Pot odds exibidas podem mudar sem mudar a classificação.
+Melhoria: estado de mão explícito, valores reais e chave de consulta que
+preserve contexto; ausência de cobertura deve ser declarada.
+
+P1-04 — AÇÕES E VALORES PRÉ-FLOP INCONSISTENTES
+Fonte: src/utils/preflopEngine.ts:375 e 386-449.
+Reproduções exatas, com demais parâmetros em probes.ts:
+a) BB, 72o, RFI, stack 40 BB, openSizeBB 2.3:
+   retorna CALL, “Pagar 1.3 BB”. Nesse cenário não há aumento a pagar.
+b) AA, BTN, vs_3bet, stack 40 BB, openSizeBB 6:
+   retorna sizingBB 43.2 e rótulo “ALL-IN (40.0 BB)”.
+c) AA, BTN, vs_open, stack 40 BB, openSizeBB 6:
+   retorna 3-BET VALOR, sizingBB 18 e rótulo “ALL-IN (40.0 BB)”.
+d) heroHand “??” é silenciosamente substituída por AKs e pode recomendar
+   uma 3-bet por valor. Não é uma leitura visual confirmada: é um problema
+   do contrato do motor que precisa ser resolvido antes de integrá-lo.
+Melhoria: validar entrada; mão desconhecida não recebe carta substituta;
+normalizar check/call/raise/all-in com valor único, mínimo legal e limite
+do stack. Texto exibido e payload precisam representar a mesma decisão.
+
+P1-05 — PÓS-FLOP NÃO RECEBE CARTAS/RANGES REAIS
+Fonte: src/utils/postflopEngine.ts:32-52 e 87-95.
+A entrada usa categorias como air, strong_value e wet_connected. Não recebe
+as duas cartas concretas do hero, o board concreto ou ranges por combo.
+A equidade inicial é uma constante por categoria e depois sofre ajustes.
+Porcentagem de acertar outs não é, por si só, equidade contra o vilão.
+Não há base para afirmar que essa modelagem resolve decisões específicas
+de blockers, value bets, bluff catches ou três barrels de forma validada.
+Melhoria: usar mãos/boards legais e ranges que evoluam com as ações, com
+referências independentes adequadas a cada street e árvore de apostas.
+
+P1-06 — RNG NÃO RESOLVE A AÇÃO; PLANO NÃO SEGUE A DECISÃO
+Fonte: src/utils/postflopEngine.ts:621-660.
+Sonda baseada no preset de c-bet seco, RNG ligado e roll 99:
+texto diz “Mixa p/ Check / Give Up”, mas action continua C-BET BLEFE e
+sizingBB continua 2.1. O plano geométrico propõe 4 BB no próprio flop.
+Outra sonda retorna FOLD no river e ainda apresenta plano de aposta 16.3 BB.
+Isso já é uma incoerência no laboratório; um executor futuro não saberia
+qual campo obedecer. O plano poderia ser uma simulação separada, desde que
+explicitamente identificado como hipótese e não como continuação da ação.
+Melhoria: distinguir política candidata, sorteio e decisão final; o plano
+deve ser coerente com a linha selecionada, com recomputação nas streets.
+
+P1-07 — REPLAYER CORROMPE STACKS COM SUMMARY
+Fonte: src/utils/handParser.ts:125-143.
+O primeiro passe procura linhas Seat no histórico inteiro, inclusive após
+SUMMARY. Exemplo comum: “Seat 1: Hero (button) (small blind) folded before
+Flop” é interpretado como outro jogador Hero, com stack inicial zero.
+Sonda: dois jogadores iniciais viraram quatro entradas; os stacks de ambos
+foram sobrescritos com zero, inclusive no primeiro passo da mão.
+Melhoria: parser por seções, assento/jogador únicos e diagnóstico de dados
+incompletos. Validar com exportações reais do Hand2Note fornecidas pelo
+usuário, além dos exemplos embutidos no projeto.
+
+P1-08 — LAUNCHER INCOMPATÍVEL COM O AGENTE ANTERIOR
+Fonte: src/App.tsx:30-32, 138-147; Software/4687e68/operar_mesa.py:204-226.
+O .bat contém HWNDs fixos “0x12FA, 0x34BC”, --bounty-bb sem número e a opção
+--human-mouse. A CLI anterior rejeita, em sequência:
+1. HWND “0x12FA,” inválido;
+2. --bounty-bb sem argumento;
+3. --human-mouse não reconhecido.
+O script operar_mesa.py nem está distribuído pelo repositório novo.
+Não há instalação, caminho ou versão do agente especificados. A execução
+real também depende do contrato explícito de autorização do agente; isso
+não deve ser corrigido acrescentando armamento automático silencioso.
+Melhoria: definir e testar o contrato de integração e seu modo de simulação.
+
+OUTROS PROBLEMAS CONFIRMADOS OU LIMITAÇÕES IMPORTANTES
+
+P2-01 — Contabilidade do replay: ao coletar, o stack do vencedor aumenta,
+mas o pote não diminui (handParser.ts:259-269). Sonda com 200 fichas iniciais:
+ao final, stacks somam 200 e o pote ainda mostra 1.5. Se for mantido para
+visualização como “pote ganho”, deve ser um campo separado do pote atual.
+Locale: “2,50 in chips” vira stack 250. A convenção numérica precisa ser
+declarada/validada, sem tentar adivinhar separadores de milhares/decimais.
+
+P2-02 — Análise por IA não é validação independente. server.ts instrui o
+modelo a julgar as mãos pelas mesmas heurísticas do novo motor. Isso pode
+reforçar o erro original. Histórico completo, incluindo resultado/showdown,
+é enviado sem recorte por decisão: há risco de avaliação retrospectiva com
+informação que não estava disponível durante a ação. Não há pareamento
+com nó de solver, cálculo independente de EV ou atualização automática de
+política. As frequências solicitadas também têm denominador ambíguo.
+Melhoria: cada decisão deve conter apenas informação disponível naquele
+momento; comparar com referência independente. IA pode explicar resultados,
+sem substituir a fonte estratégica nem tomar vitórias como prova de acerto.
+
+P2-03 — API ainda precisa de contrato robusto. server.ts:47-121 e 168-185
+não marca campos da resposta como obrigatórios e apenas faz JSON.parse.
+Não há validação de totais, percentuais, IDs ou estrutura de saída. O corte
+em 90.000 caracteres pode interromper uma mão. O modelo gemini-4-hydrogen
+é fixo e sua disponibilidade não foi verificada nesta auditoria. Antes de
+publicar uma URL, o endpoint precisa de autenticação e limites de consumo;
+atualmente escuta em 0.0.0.0 e a rota não exige autenticação.
+
+P2-04 — Bankroll não é registro real persistente. App.tsx:43-75 inicia com
+três resultados de exemplo. Novos registros permanecem apenas em memória.
+EV informado como zero é substituído pelo lucro devido ao uso de ||;
+EV ausente também vira lucro. Isso fabrica equivalência entre métricas.
+Melhoria: separar demonstração de dados reais, persistir registros, preservar
+zero e representar EV desconhecido como ausente, com origem da medição.
+
+P2-05 — Manual e interface exageram o estado de implementação.
+docs/GUIA_FUNCIONAMENTO.md:8-31 descreve captura a 0.1 ms/frame, fluxo de
+torneios validado, execução round-robin e blindagens absolutas. Não há
+evidências dessas capacidades neste repositório. Controles de mouse só
+alteram estado visual. Promessas de indetectabilidade não são comprovadas
+pelo código e devem ser removidas. Não foi validada qualquer técnica de
+evasão nem é possível garantir ausência de detecção.
+
+CONFORMIDADE COM AS ORIENTAÇÕES ANTERIORES
+
+- Painel de inspeção e cenários: avanço parcial, implementado.
+- Importação e replayer de mãos: implementados parcialmente; parser falha.
+- Fonte HRC/NVT, manifesto e proveniência por decisão: ausentes.
+- Nó exato e cobertura de múltiplos limps/open + callers: incompletos.
+- Mão desconhecida gerar abstenção: não atendido; há fallback para AKs.
+- Estado contínuo de cada mesa/mão: não integrado no novo repositório.
+- Validador independente de estratégia: ausente.
+- Telemetria real de decisão/execução/confirmação: ausente.
+- Preservação demonstrável dos testes do Python: não demonstrada.
+
+ANTECIPAÇÕES E PRESETS: O QUE JÁ EXISTE E O QUE FALTA
+
+Já existem presets VISUAIS de cenário nos laboratórios. Eles preenchem
+formulários, não acionam os botões de tamanho do PPPoker.
+
+Ainda não há leitura antecipada conectada ao agente, preparação de decisões
+antes da vez do hero, cache por versão de estado, invalidação por nova ação
+ou fila com prioridades/prazos entre mesas. O preset de uma matriz não é
+uma implementação desses recursos.
+
+Plano recomendado para antecipação:
+1. Observar passivamente cartas/board e ações desde o começo da mão.
+2. Preparar avaliações candidatas por versão do estado; atualizar quando
+   mudar ação, posição, stack, pote, board ou fonte estratégica.
+3. Ao chegar a vez do hero, revalidar contexto e opções legais antes de
+   considerar qualquer ação. Cache antigo não deve sobreviver a mudança.
+4. Medir captura, leitura, consulta, espera, execução e confirmação, incluindo
+   p50/p95/p99 e decisões vencidas por prazo, em carga simultânea simulada.
+5. Validar de forma controlada no Windows, começando pelo modo passivo.
+
+Auto-fold não deve ser inferido só porque a mão falta no range de open.
+BB pode ter check gratuito; SB/BTN, preço, limpers, walk e alterações da ação
+podem mudar a decisão. Preparar um fold candidato é diferente de executá-lo
+antecipadamente. Não foi implementado nem validado auto-fold nesta revisão.
+
+Plano recomendado para sizes/presets do cliente:
+1. Inventariar quais tamanhos realmente aparecem no PPPoker por contexto.
+2. Estudar/validar políticas já compatíveis com esses tamanhos discretos;
+   não arredondar livremente a saída de um solver de outra árvore.
+3. Representar explicitamente tamanho total, valor adicional, fração do pote
+   e all-in, com equivalência entre rótulo e payload.
+4. Só depois mapear o resultado para um preset legal, com observação e
+   confirmação do valor. Esta auditoria não executou esse mapeamento real.
+
+ORDEM RECOMENDADA DE IMPLEMENTAÇÃO
+
+ETAPA 1 — Honestidade do estado e integridade de dados.
+Corrigir ação/valor/rótulo, fallback AKs, summary, pote e persistência/EV.
+Marcar funcionalidades demonstrativas. Criar regressões dos casos anexos.
+Critério: nenhum caso conhecido de ação ilegal, aposta acima do stack,
+substituição de cartas ou corrupção silenciosa de histórico.
+
+ETAPA 2 — Uma fonte estratégica rastreável.
+Usar o painel como consumidor do núcleo validado, em vez de manter outro
+cérebro independente no navegador. Trazer os packs HRC/NVT reais usados
+na máquina, com hash, formato, contexto, cobertura e decisões de referência.
+Priorizar dois limps e open + dois calls com contexto completo.
+Critério: decisão explica qual fonte/nó foi consultado; falta de cobertura
+é visível; comparação independente detecta divergências e perda de EV.
+
+ETAPA 3 — Históricos como casos de avaliação.
+Importar amostras reais do Hand2Note; definir explicitamente os heroes do
+time, deduplicar e validar fichas/ações. Separar estudos e avaliação por
+origem/sessão. Sem rótulo “ganhou = jogou certo” e sem cartas futuras.
+Critério: parser confiável nos formatos acordados e avaliação por decisão.
+
+ETAPA 4 — Pós-flop com cartas, ranges e árvores reais.
+Escolher spots prioritários, fontes apropriadas a cada street e sizes
+discretos. Validar heads-up antes de ampliar multiway. Resolver RNG e plano
+como parte de uma política coerente. Não aplicar limiares arbitrários como
+se fossem equidade ou solução de equilíbrio.
+
+ETAPA 5 — Integração, antecipação e capacidade operacional.
+Conectar observação do agente ao painel, começar em modo passivo e registrar
+latências/versões. Testar concorrência em laboratório e, depois, Windows.
+Só ampliar mesas após evidência de prazos, ausência de ações duplicadas,
+estado atualizado e confirmação correta. Não há comprovação de seis mesas
+ou mais no 2.0 atual.
+
+CONCLUSÃO PRÁTICA
+
+Aproveitar o painel e a organização dos laboratórios. Preservar o agente
+anterior e seus testes. A frente prioritária continua sendo integridade do
+estado e da fonte estratégica; em seguida, pós-flop baseado em referências
+independentes. A aparência de um painel completo ainda não representa um
+bot completo, validado ou um jogador estrategicamente superior.
+
+EVIDÊNCIAS E REPRODUÇÃO
+
+Arquivos desta entrega: probes.ts, probes.json, browser_check.py,
+browser.json, launcher.json, dependency-install.log, lint.log e build.log.
+Os históricos das sondas são sintéticos; não são mãos reais do usuário.
+
+No diretório raiz da versão auditada, após instalar com o lockfile Bun:
+  npm run lint
+  npm run build
+  ./node_modules/.bin/tsx docs/audits/2026-11-13-458204d/probes.ts
+
+Para repetir a navegação: iniciar o servidor em uma sessão separada e usar
+Python com Playwright e Chromium instalados:
+  python docs/audits/2026-11-13-458204d/browser_check.py
+O script usa /usr/bin/chromium e localhost:3000. AUDIT_BASE_URL e EVIDENCE_DIR
+permitem alterar URL e destino. A checagem de chave ausente só é ativada com
+AUDIT_EXPECT_NO_GEMINI_KEY=1 e pressupõe que GEMINI_API_KEY não esteja
+configurada. O padrão não solicita análise nem consome API.
+
+As sondas registram comportamentos observados; sua execução terminar com
+sucesso não significa aprovação estratégica. Não são substituto de uma
+suíte de regressão com oráculos independentes e critérios de aprovação.

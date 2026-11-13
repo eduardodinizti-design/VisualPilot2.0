@@ -1,0 +1,290 @@
+{
+  "bbUnopened72o": {
+    "action": "CALL",
+    "sizingBB": 1.2999999999999998,
+    "sizingLabel": "Pagar 1.3 BB"
+  },
+  "invalidHandFallsBackToAKs": {
+    "invalid": {
+      "action": "3-BET VALOR",
+      "sizingBB": 6.9,
+      "sizingLabel": "6.9 BB (3x)"
+    },
+    "AKs": {
+      "action": "3-BET VALOR",
+      "sizingBB": 6.9,
+      "sizingLabel": "6.9 BB (3x)"
+    }
+  },
+  "fourBetExceedsStack": {
+    "action": "4-BET / SHOVE",
+    "sizingBB": 43.2,
+    "sizingLabel": "ALL-IN (40.0 BB)"
+  },
+  "allInLabelDifferentFromAmount": {
+    "action": "3-BET VALOR",
+    "sizingBB": 18,
+    "sizingLabel": "ALL-IN (40.0 BB)"
+  },
+  "openSizeDoesNotChange169Actions": {
+    "changed": 0
+  },
+  "mixedStrategyDifferentFromAction": {
+    "action": "C-BET BLEFE",
+    "sizingBB": 2.1,
+    "sizingLabel": "33% do Pote (2.1 BB)",
+    "frequencies": {
+      "primary": 75,
+      "secondary": 25,
+      "secondaryLabel": "Check / Give Up"
+    },
+    "rngExecutedLine": "Roll 99 ≥ 75% → Mixa p/ Check / Give Up",
+    "streetPlan": [
+      {
+        "street": "Flop",
+        "potBefore": 6.5,
+        "betPct": 61,
+        "betBB": 4
+      },
+      {
+        "street": "Turn",
+        "potBefore": 14.5,
+        "betPct": 61,
+        "betBB": 8.8
+      },
+      {
+        "street": "River",
+        "potBefore": 32.1,
+        "betPct": 61,
+        "betBB": 19.2
+      }
+    ]
+  },
+  "foldStillPlansBets": {
+    "action": "FOLD",
+    "sizingBB": 0,
+    "sizingLabel": "Sem aposta",
+    "frequencies": {
+      "primary": 95,
+      "secondary": 5,
+      "secondaryLabel": "Call"
+    },
+    "rngExecutedLine": "Roll 99 ≥ 95% → Mixa p/ Call",
+    "streetPlan": [
+      {
+        "street": "River",
+        "potBefore": 6.5,
+        "betPct": 250,
+        "betBB": 16.3
+      }
+    ]
+  },
+  "payoutRetainsPot": {
+    "players": [
+      {
+        "seat": 1,
+        "name": "Hero",
+        "initialStack": 100,
+        "isHero": true
+      },
+      {
+        "seat": 2,
+        "name": "Villain",
+        "initialStack": 100,
+        "isHero": false
+      }
+    ],
+    "lastStep": {
+      "index": 3,
+      "street": "Showdown",
+      "actor": "Mesa",
+      "description": "Showdown",
+      "pot": 1.5,
+      "visibleBoard": [],
+      "playerStates": {
+        "Hero": {
+          "stack": 99.5,
+          "streetBet": 0,
+          "lastAction": "Fold",
+          "folded": true,
+          "allIn": false
+        },
+        "Villain": {
+          "stack": 100.5,
+          "streetBet": 0,
+          "lastAction": "",
+          "folded": false,
+          "allIn": false
+        }
+      }
+    },
+    "firstStep": {
+      "index": 0,
+      "street": "Preflop",
+      "actor": "Mesa",
+      "description": "Cartas distribuídas · Hero [7c 2d]",
+      "pot": 1.5,
+      "visibleBoard": [],
+      "playerStates": {
+        "Hero": {
+          "stack": 99.5,
+          "streetBet": 0.5,
+          "lastAction": "SB 0.5",
+          "folded": false,
+          "allIn": false
+        },
+        "Villain": {
+          "stack": 99,
+          "streetBet": 1,
+          "lastAction": "BB 1",
+          "folded": false,
+          "allIn": false
+        }
+      }
+    }
+  },
+  "summarySeatsOverwriteStacks": {
+    "players": [
+      {
+        "seat": 1,
+        "name": "Hero",
+        "initialStack": 100,
+        "isHero": true
+      },
+      {
+        "seat": 2,
+        "name": "Villain",
+        "initialStack": 100,
+        "isHero": false
+      },
+      {
+        "seat": 1,
+        "name": "Hero",
+        "initialStack": 0,
+        "isHero": true
+      },
+      {
+        "seat": 2,
+        "name": "Villain",
+        "initialStack": 0,
+        "isHero": false
+      }
+    ],
+    "lastStep": {
+      "index": 3,
+      "street": "Showdown",
+      "actor": "Mesa",
+      "description": "Showdown",
+      "pot": 0,
+      "visibleBoard": [],
+      "playerStates": {
+        "Hero": {
+          "stack": 0,
+          "streetBet": 0,
+          "lastAction": "Fold",
+          "folded": true,
+          "allIn": false
+        },
+        "Villain": {
+          "stack": 1.5,
+          "streetBet": 0,
+          "lastAction": "",
+          "folded": false,
+          "allIn": false
+        }
+      }
+    },
+    "firstStep": {
+      "index": 0,
+      "street": "Preflop",
+      "actor": "Mesa",
+      "description": "Cartas distribuídas · Hero [7c 2d]",
+      "pot": 0,
+      "visibleBoard": [],
+      "playerStates": {
+        "Hero": {
+          "stack": 0,
+          "streetBet": 0,
+          "lastAction": "SB 0",
+          "folded": false,
+          "allIn": false
+        },
+        "Villain": {
+          "stack": 0,
+          "streetBet": 0,
+          "lastAction": "BB 0",
+          "folded": false,
+          "allIn": false
+        }
+      }
+    }
+  },
+  "decimalComma": {
+    "players": [
+      {
+        "seat": 1,
+        "name": "Hero",
+        "initialStack": 250,
+        "isHero": true
+      },
+      {
+        "seat": 2,
+        "name": "Villain",
+        "initialStack": 100,
+        "isHero": false
+      }
+    ],
+    "lastStep": {
+      "index": 3,
+      "street": "Showdown",
+      "actor": "Mesa",
+      "description": "Showdown",
+      "pot": 1.5,
+      "visibleBoard": [],
+      "playerStates": {
+        "Hero": {
+          "stack": 249.5,
+          "streetBet": 0,
+          "lastAction": "Fold",
+          "folded": true,
+          "allIn": false
+        },
+        "Villain": {
+          "stack": 100.5,
+          "streetBet": 0,
+          "lastAction": "",
+          "folded": false,
+          "allIn": false
+        }
+      }
+    },
+    "firstStep": {
+      "index": 0,
+      "street": "Preflop",
+      "actor": "Mesa",
+      "description": "Cartas distribuídas · Hero [7c 2d]",
+      "pot": 1.5,
+      "visibleBoard": [],
+      "playerStates": {
+        "Hero": {
+          "stack": 249.5,
+          "streetBet": 0.5,
+          "lastAction": "SB 0.5",
+          "folded": false,
+          "allIn": false
+        },
+        "Villain": {
+          "stack": 99,
+          "streetBet": 1,
+          "lastAction": "BB 1",
+          "folded": false,
+          "allIn": false
+        }
+      }
+    }
+  },
+  "matrixControls": {
+    "cells": 169,
+    "percentage": 4.8
+  }
+}
