@@ -11,8 +11,7 @@ Uso:
   python operar_mesa.py --hwnd 0x... --arm        # arma (ainda precisa Ctrl+Alt+R)
 """
 import argparse
-import sys
-import os
+import sys, os; sys.path.append(os.path.dirname(__file__)); sys.path.append(os.path.join(os.path.dirname(__file__), "modules"))
 import time
 
 # Ensure python_bot directory is in sys.path for internal packages (table_reading, table_discovery)

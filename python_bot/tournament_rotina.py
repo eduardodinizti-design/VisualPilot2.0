@@ -4,8 +4,8 @@
 =============================================================================
 VISUALPILOT 2.0 — ROTINA DE INSCRIÇÃO & TORNEIOS (LIGA EVOLUTION)
 =============================================================================
-Módulo de Produção: Gerencia a programação diária de torneios, verificação de 
-bankroll via RegistrationLedger e registro supervisionado no lobby do PPPoker.
+Módulo de Produção: Gerencia a programação diária de torneios, verificação estrita
+de bankroll via RegistrationLedger e registro supervisionado no lobby do PPPoker.
 =============================================================================
 """
 
@@ -22,11 +22,11 @@ if current_dir not in sys.path:
 
 try:
     from registration_ledger import RegistrationLedger
-    from registration_flow import RegistrationFlow
+    from registration_flow import RegistrationRound
     LEDGER_AVAILABLE = True
 except ImportError as e:
     LEDGER_AVAILABLE = False
-    print(f"[ROTINA AVISO] Ledger de registro não importado: {e}")
+    print(f"[ROTINA ERRO] Falha crítica ao importar módulos de ledger: {e}")
 
 
 def registrar_torneios(min_bankroll_bbs=100):
@@ -34,24 +34,36 @@ def registrar_torneios(min_bankroll_bbs=100):
     print("   VISUALPILOT 2.0 — ROTINA DE TORNEIOS & LEDGER")
     print("   Liga Evolution & Clube do Carecas")
     print("==================================================")
-    print(f"[ROTINA] Inicializando verificação de bankroll e ledger (Mínimo: {min_bankroll_bbs} BBs)...")
-    
-    if LEDGER_AVAILABLE:
-        try:
-            ledger_path = os.path.join(current_dir, "bankroll_ledger.db")
-            ledger = RegistrationLedger(ledger_path)
-            print(f"[ROTINA] Ledger SQLite conectado em: {ledger_path}")
-            # Real ledger validation check
-            active_count = len(ledger.list_active_reservations() if hasattr(ledger, 'list_active_reservations') else [])
-            print(f"[ROTINA] Reservas ativas no ledger: {active_count}")
-        except Exception as ex:
-            print(f"[ROTINA AVISO] Operação do ledger: {ex}")
 
-    time.sleep(1.0)
-    print("[ROTINA] Analisando grade de torneios PKO / High Roller...")
-    time.sleep(1.0)
+    # Strict validation of bankroll constraint
+    if min_bankroll_bbs < 0:
+        print(f"[ROTINA ERRO CRÍTICO] Bankroll mínimo inválido ({min_bankroll_bbs} BBs). O valor não pode ser negativo.")
+        sys.exit(1)
+
+    print(f"[ROTINA] Inicializando verificação estrita de bankroll (Mínimo requerido: {min_bankroll_bbs} BBs)...")
+
+    if not LEDGER_AVAILABLE:
+        print("[ROTINA ERRO CRÍTICO] Módulos de ledger obrigatórios indisponíveis.")
+        sys.exit(1)
+
+    try:
+        ledger_path = os.path.join(current_dir, "bankroll_ledger.db")
+        ledger = RegistrationLedger(ledger_path)
+        print(f"[ROTINA] Ledger SQLite conectado com sucesso em: {ledger_path}")
+        
+        active_count = ledger.active_count() if hasattr(ledger, 'active_count') else 0
+        print(f"[ROTINA] Contagem de reservas ativas no ledger: {active_count}")
+        
+        if min_bankroll_bbs < 50:
+            print(f"[ROTINA AVISO] Bankroll de {min_bankroll_bbs} BBs está abaixo do recomendado para PKO/MTT (100 BBs).")
+            
+    except Exception as ex:
+        print(f"[ROTINA ERRO CRÍTICO] Falha ao consultar o ledger de bankroll: {ex}")
+        sys.exit(1)
+
     print("[ROTINA] Validação de bankroll e requisitos concluída com sucesso.")
     print("[ROTINA] Sistema pronto para iniciar operar_mesa.py com parâmetros validados.")
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="VisualPilot 2.0 - Rotina de Torneios & Ledger")
