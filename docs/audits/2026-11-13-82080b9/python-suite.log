@@ -1,0 +1,662 @@
+EEEEs..........EssssE......sEEEE...........................................EEE....EEEEE.......EEEEEEEE............................................................................................................E.................................../workspace/work/visualpilot2-audit-82080b9/python_bot/test_preflop_advisor.py:551: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpuya8gc5d/a.json' mode='w' encoding='UTF-8'>
+  json.dump(pack_with_node(), open(p1, 'w'))        # validated BTN 25
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/work/visualpilot2-audit-82080b9/python_bot/test_preflop_advisor.py:552: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpuya8gc5d/b.json' mode='w' encoding='UTF-8'>
+  json.dump(pack_with_reference(), open(p2, 'w'))   # reference BTN 100
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.................................................................................EEEE.....E....................................E.....E.............................EEEEEEE...................
+======================================================================
+ERROR: test_action_buttons (unittest.loader._FailedTest.test_action_buttons)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_action_buttons
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_action_buttons.py", line 5, in <module>
+    from table_reading.action_buttons import parse_label,read_action_buttons
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_action_coordinator (unittest.loader._FailedTest.test_action_coordinator)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_action_coordinator
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_action_coordinator.py", line 5, in <module>
+    from action_coordinator import (DryRunInput, describe_plan, map_advice_to_action,
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/action_coordinator.py", line 18, in <module>
+    from table_reading.action_buttons import read_action_buttons
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_action_executor (unittest.loader._FailedTest.test_action_executor)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_action_executor
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_action_executor.py", line 4, in <module>
+    from action_executor import ActionExecutor
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/action_executor.py", line 16, in <module>
+    from action_coordinator import plan_from_buttons, decision_identity
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/action_coordinator.py", line 18, in <module>
+    from table_reading.action_buttons import read_action_buttons
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_assistir_mesa (unittest.loader._FailedTest.test_assistir_mesa)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_assistir_mesa
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_assistir_mesa.py", line 10, in <module>
+    import assistir_mesa
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/assistir_mesa.py", line 12, in <module>
+    from table_reading.pipeline import configure_ocr
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_bounty (unittest.loader._FailedTest.test_bounty)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_bounty
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_bounty.py", line 11, in <module>
+    from table_reading.bounty import parse_bounty, read_bounty, read_seat_bounties, _to_float
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_button_templates (unittest.loader._FailedTest.test_button_templates)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_button_templates
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_button_templates.py", line 5, in <module>
+    from table_reading.button_templates import ASSETS,normalize,read_static_label,templates
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_community_cards (unittest.loader._FailedTest.test_community_cards)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_community_cards
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_community_cards.py", line 5, in <module>
+    from table_reading.community_cards import read_board
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_concurrent_reads (unittest.loader._FailedTest.test_concurrent_reads)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_concurrent_reads
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_concurrent_reads.py", line 6, in <module>
+    from table_reading.concurrent_reads import ordered_board_reads
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_continuous_observer (unittest.loader._FailedTest.test_continuous_observer)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_continuous_observer
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_continuous_observer.py", line 3, in <module>
+    from continuous_observer import observe
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/continuous_observer.py", line 4, in <module>
+    from table_reading.pipeline import analyze_tables
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_corner_sampling (unittest.loader._FailedTest.test_corner_sampling)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_corner_sampling
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_corner_sampling.py", line 4, in <module>
+    from table_reading.table_corner_anchors import corner_evidence,_measure,REGIONS
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_dealer_button (unittest.loader._FailedTest.test_dealer_button)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_dealer_button
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_dealer_button.py", line 8, in <module>
+    from table_reading import dealer_button, seat_layout
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_detector_batch (unittest.loader._FailedTest.test_detector_batch)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_detector_batch
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_detector_batch.py", line 4, in <module>
+    from table_reading.table_corner_anchors import _menu_stripes
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_detector_proposals (unittest.loader._FailedTest.test_detector_proposals)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_detector_proposals
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_detector_proposals.py", line 6, in <module>
+    from table_reading.automatic_table_crops import detect_table_crops
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_eightmax_layout (unittest.loader._FailedTest.test_eightmax_layout)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_eightmax_layout
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_eightmax_layout.py", line 11, in <module>
+    from table_reading.table_state import read_seat_stacks, read_occupancy
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_exact_call_template (unittest.loader._FailedTest.test_exact_call_template)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_exact_call_template
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_exact_call_template.py", line 5, in <module>
+    from table_reading.button_templates import ASSETS,read_exact_call,exact_call_template
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_grade_reader (unittest.loader._FailedTest.test_grade_reader)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_grade_reader
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_grade_reader.py", line 8, in <module>
+    import grade_reader as gr
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/grade_reader.py", line 19, in <module>
+    from table_reading.ocr_runtime import image_to_string
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_hand_reconcile (unittest.loader._FailedTest.test_hand_reconcile)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_hand_reconcile
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_hand_reconcile.py", line 3, in <module>
+    from table_reading.hand_reconcile import HandReconciler, street_from_board
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_hand_tracking (unittest.loader._FailedTest.test_hand_tracking)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_hand_tracking
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_hand_tracking.py", line 9, in <module>
+    from table_reading import hand_tracking
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_hud_reader (unittest.loader._FailedTest.test_hud_reader)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_hud_reader
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_hud_reader.py", line 10, in <module>
+    from table_reading.hud_reader import read_hud, read_seat_huds, STAT_NAMES
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_lab_metrics (unittest.loader._FailedTest.test_lab_metrics)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_lab_metrics
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_lab_metrics.py", line 5, in <module>
+    from continuous_observer import observe
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/continuous_observer.py", line 4, in <module>
+    from table_reading.pipeline import analyze_tables
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_lobby_runner (unittest.loader._FailedTest.test_lobby_runner)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_lobby_runner
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_lobby_runner.py", line 13, in <module>
+    from lobby_runner import (details_from_card, find_lobby_crop, merge_cards,
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/lobby_runner.py", line 17, in <module>
+    from grade_reader import find_buyin_badges, read_grade
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/grade_reader.py", line 19, in <module>
+    from table_reading.ocr_runtime import image_to_string
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_manual_windows (unittest.loader._FailedTest.test_manual_windows)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_manual_windows
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_manual_windows.py", line 4, in <module>
+    from testar_windows import options,verify_pixels,key
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/testar_windows.py", line 7, in <module>
+    from table_reading.pipeline import analyze_tables
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_ocr_inprocess (unittest.loader._FailedTest.test_ocr_inprocess)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_ocr_inprocess
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_ocr_inprocess.py", line 10, in <module>
+    from table_reading import ocr_runtime as runtime
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_ocr_runtime (unittest.loader._FailedTest.test_ocr_runtime)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_ocr_runtime
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_ocr_runtime.py", line 5, in <module>
+    from table_reading import ocr_runtime as runtime
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_operar_mesa (unittest.loader._FailedTest.test_operar_mesa)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_operar_mesa
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_operar_mesa.py", line 12, in <module>
+    import operar_mesa
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/operar_mesa.py", line 19, in <module>
+    from table_reading.pipeline import configure_ocr
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_position_stabilizer (unittest.loader._FailedTest.test_position_stabilizer)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_position_stabilizer
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_position_stabilizer.py", line 5, in <module>
+    from position_stabilizer import PositionStabilizer
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/position_stabilizer.py", line 20, in <module>
+    from table_reading.dealer_button import derive_positions
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_pppoker_discovery (unittest.loader._FailedTest.test_pppoker_discovery)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_pppoker_discovery
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_pppoker_discovery.py", line 8, in <module>
+    from table_discovery.windows import WindowInfo
+ModuleNotFoundError: No module named 'table_discovery'
+
+
+======================================================================
+ERROR: test_raise_panel (unittest.loader._FailedTest.test_raise_panel)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_raise_panel
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_raise_panel.py", line 5, in <module>
+    from raise_panel import map_multiplier_to_preset, parse_multiplier
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/raise_panel.py", line 20, in <module>
+    from table_reading.ocr_runtime import image_to_string
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_raise_sequencer (unittest.loader._FailedTest.test_raise_sequencer)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_raise_sequencer
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_raise_sequencer.py", line 10, in <module>
+    from raise_sequencer import RaiseSequencer
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/raise_sequencer.py", line 24, in <module>
+    from table_reading.automatic_table_crops import detect_table_crops
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_rank_confirmation (unittest.loader._FailedTest.test_rank_confirmation)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_rank_confirmation
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_rank_confirmation.py", line 6, in <module>
+    from table_reading.segmented_rank import read_segmented_rank
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_rank_templates (unittest.loader._FailedTest.test_rank_templates)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_rank_templates
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_rank_templates.py", line 9, in <module>
+    from table_reading import rank_templates as templates
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_region_presentation (unittest.loader._FailedTest.test_region_presentation)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_region_presentation
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_region_presentation.py", line 2, in <module>
+    from table_reading.presentation import describe_regions
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_roi_geometry (unittest.loader._FailedTest.test_roi_geometry)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_roi_geometry
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_roi_geometry.py", line 4, in <module>
+    from table_reading.roi_geometry import get_roi,clear_cache,cache_info,Rect
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_session_collection (unittest.loader._FailedTest.test_session_collection)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_session_collection
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_session_collection.py", line 5, in <module>
+    from coletar_sessao import run_session
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/coletar_sessao.py", line 10, in <module>
+    from table_reading.pipeline import analyze_tables
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_stage_instrumentation (unittest.loader._FailedTest.test_stage_instrumentation)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_stage_instrumentation
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_stage_instrumentation.py", line 11, in <module>
+    from table_reading import ocr_runtime as runtime
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_state_observer (unittest.loader._FailedTest.test_state_observer)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_state_observer
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_state_observer.py", line 4, in <module>
+    from state_observer import StateObserver, render
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/state_observer.py", line 17, in <module>
+    from table_reading.hand_tracking import HandTracker
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_table_advisor (unittest.loader._FailedTest.test_table_advisor)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_table_advisor
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_table_advisor.py", line 9, in <module>
+    import table_advisor
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/table_advisor.py", line 16, in <module>
+    from table_reading.pipeline import configure_ocr
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_table_reading (unittest.loader._FailedTest.test_table_reading)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_table_reading
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_table_reading.py", line 11, in <module>
+    from table_reading.pipeline import analyze_tables
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_table_state (unittest.loader._FailedTest.test_table_state)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_table_state
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_table_state.py", line 9, in <module>
+    from table_reading import seat_layout, table_state
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_template_sample_collection (unittest.loader._FailedTest.test_template_sample_collection)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_template_sample_collection
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_template_sample_collection.py", line 5, in <module>
+    import coletar_amostras as collector
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/coletar_amostras.py", line 10, in <module>
+    from table_reading.automatic_table_crops import detect_table_crops
+ModuleNotFoundError: No module named 'table_reading'
+
+
+======================================================================
+ERROR: test_tournament (unittest.loader._FailedTest.test_tournament)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_tournament
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/work/visualpilot2-audit-82080b9/python_bot/test_tournament.py", line 6, in <module>
+    from table_reading import tournament
+ModuleNotFoundError: No module named 'table_reading'
+
+
+----------------------------------------------------------------------
+Ran 435 tests in 4.466s
+
+FAILED (errors=41, skipped=6)

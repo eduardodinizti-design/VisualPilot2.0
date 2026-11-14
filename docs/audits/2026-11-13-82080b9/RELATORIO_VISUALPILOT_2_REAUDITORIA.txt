@@ -1,0 +1,395 @@
+REAUDITORIA DO VISUALPILOT 2.0 — INTEGRIDADE, CÉREBRO E INTEGRAÇÃO
+Data: 13/11/2026
+Repositório: eduardodinizti-design/VisualPilot2.0
+Versão auditada: main, 82080b948c18b3a78beb4716f1434e72f9516ca8
+Comparação principal: ab57da763e8d55083ca741a759c4106803cff5f1
+Referência adicional: Software/4687e68 e auditoria inicial do 2.0/458204d.
+
+PARECER
+
+Houve avanço técnico real: o novo push incorporou módulos Python do projeto
+anterior, incluindo captura Win32, controlador de cursor, revalidação de ação,
+consultas de ranges, avaliação de mãos, observadores e testes. Esta versão
+já contém mais que o simulador das duas revisões anteriores.
+
+Mesmo assim, NÃO aprovo o checkout atual para operar mesas reais. A migração
+está incompleta, o agente não inicia, o painel anuncia sessão ativa após a
+falha do processo, o launcher está incompatível e os casos estratégicos que
+motivaram a evolução continuam sendo aproximados por contextos diferentes.
+
+A prioridade agora é concluir e verificar a migração, com um contrato único
+entre painel, agente, estado e estratégia. Acrescentar mais fórmulas ao
+laboratório web antes disso não corrige o fluxo operacional.
+
+ESCOPO E PRESERVAÇÃO
+
+Executor e GitHub foram confirmados. HEAD e git status foram lidos antes das
+alterações. A auditoria usou uma nova cópia isolada. Não há AGENTS.md no novo
+checkout nem nos diretórios ancestrais aplicáveis. Foram preservados os
+checkouts anteriores, inclusive o trabalho local em software-review, HEAD
+e922e33, branch fix/observer-integration. Nenhum reset, limpeza ou stash.
+
+O relatório compara código e executa laboratório Linux. Não houve cliques
+reais, captura de PPPoker Windows, inscrição com dinheiro ou uso de Gemini.
+O código funcional do repositório não foi modificado nesta auditoria.
+
+RESUMO DOS TESTES
+
+1. Instalação pelo lockfile Bun: PASSOU.
+   npx --yes bun install --frozen-lockfile --ignore-scripts
+2. npm run lint: PASSOU; executa TypeScript tsc --noEmit.
+3. npm run build: PASSOU; avisos de __dirname e bundle JS grande permanecem.
+4. Python: os 117 arquivos .py passaram na compilação sintática em memória.
+5. unittest discover: REPROVOU.
+   435 entradas: 388 passaram, 41 erros de importação, 6 pulos.
+   Os 41 erros representam módulos de teste que não puderam ser carregados,
+   não 41 asserts de estratégia que falharam. Os testes internos desses
+   módulos não chegaram a executar. Não interpretar 435 como suíte completa.
+   Causas: 40 módulos sem table_reading e 1 sem table_discovery.
+6. operar_mesa.py --help: FALHOU, saída 1, sem table_reading.
+7. EngineBridge: FALHOU ao importar uma classe inexistente OCRProcessor.
+8. CLI extraída do próprio código: parâmetros atuais do launcher falham
+   em quatro sondas progressivas, todas com saída 2.
+9. Servidor de produção: iniciou e serviu a interface.
+10. Chromium: abas pré/pós-flop, análise e exemplo do replayer abriram sem
+    erro JavaScript não tratado no percurso executado.
+11. Chromium + start: interface mostrou Sessão Ativa com backend parado.
+12. Sondas Python: confirmaram aproximações de dois limps/open + dois calls,
+    elegibilidade indevida do CALL aproximado e seleção por ordem de fonte.
+13. Sondas web: reproduziram os erros anteriores de BB, sizing, RNG e parser.
+14. Registro de torneios: endpoint aceitou minBankroll=-10 e o script
+    imprimiu sucesso, sem verificar saldo, cliente ou inscrição.
+
+Ambiente: Linux, Python 3.12.14, Node 24.19.0, Bun 1.4.4 e Chromium.
+Testes Python usaram o ambiente virtual de auditoria já existente, com
+numpy 2.2.6, OpenCV 4.11.0.86 e psutil 6.1.1. Nenhum diretório do repositório
+antigo foi acrescentado ao PYTHONPATH para suprir código que falta no 2.0.
+Não foi homologada uma instalação Windows limpa a partir de requirements.txt.
+
+O QUE MELHOROU
+
+- A árvore agora contém 117 arquivos Python no total, incluindo 63 módulos
+  test_*.py. A comparação com Software/4687e68 encontrou 93 arquivos Python
+  da raiz com conteúdo idêntico; 20 diferem e tournament_rotina.py é outro
+  arquivo. Portanto, há reaproveitamento real, mas não uma migração integral
+  daquela revisão e de todas as suas correções.
+- window_capture_engine.py tem implementação Win32/GDI, validação de
+  processo/janela/geometria e testes com backend falso. O antigo retorno
+  de metadados como se fosse captura deixou de ser o operador principal.
+- cursor_input_win.py possui chamadas Win32 reais; ActionExecutor e
+  CursorController têm revalidação de identidade/geometria e confirmação.
+- O operador mantém modo padrão dry-run e controle de pausa. Pós-flop é
+  explicitamente exploratório e não é executado automaticamente.
+- Há PreflopAdvisor que pode carregar exports, avaliação de cartas/ranges
+  em Python, cache, observadores e sequenciador de aumento.
+- A limitação artificial de cinco ciclos do simulador foi substituída por
+  um loop operacional configurável. Isso é melhoria de implementação, não
+  comprovação de execução em mesas reais.
+
+BLOQUEIOS E REGRESSÕES REPRODUZÍVEIS
+
+P1-01 — CHECKOUT PYTHON INCOMPLETO: O AGENTE NÃO INICIA
+Fontes: python_bot/operar_mesa.py:19-36 e demais imports.
+
+Faltam table_reading/ e table_discovery/. São pacotes internos do projeto,
+não bibliotecas Win32 que se resolvem apenas mudando para Windows. Não há
+submodule, instalador ou dependência declarada que forneça esses pacotes.
+Resultado com OpenCV instalado:
+
+  python python_bot/operar_mesa.py --help
+  ModuleNotFoundError: No module named 'table_reading'
+
+Esse erro acontece antes do argparse e de qualquer captura. Instalar só o
+requirements.txt ou executar no Windows não acrescenta os pacotes ausentes.
+
+O manifesto atual também omite psutil, usado pelo backend nativo, e mss,
+usado pelo módulo alternativo de captura. Bibliotecas globais existentes
+na máquina não devem ser pressupostas. Templates, imagens e packs JSON
+também não foram incluídos no pacote Python deste checkout.
+
+Implementar: migração completa de fontes/recursos necessários, dependências
+declaradas, configuração de caminhos e teste de inicialização em ambiente
+limpo. O critério não é somente compilar: o comando de ajuda e o modo
+passivo precisam funcionar sem buscar código no checkout antigo.
+
+P1-02 — LAUNCHER E PONTE WEB VOLTARAM A DIVERGIR DA CLI
+Fontes: src/App.tsx:130-165, server.ts:135-151,
+python_bot/operar_mesa.py:147-163.
+
+O novo agente exige HWNDs numéricos, --bounty-bb numérico e não reconhece
+--overlay nem --human-mouse. Painel e servidor continuam enviando os
+parâmetros do simulador anterior.
+
+Sondas do parser, sem executar o agente ou enviar input:
+a) --hwnd 0x12FA, 0x34BC ... => HWND com vírgula inválido;
+b) retirando a vírgula => --bounty-bb exige número;
+c) informando bounty => --overlay e --human-mouse não reconhecidos;
+d) retirando --overlay => --human-mouse continua não reconhecido.
+
+Todos retornaram saída 2. Hoje a falta de imports aparece antes; consertá-la
+apenas revelará a incompatibilidade seguinte.
+
+Os HWNDs ainda são constantes de demonstração no frontend. O servidor
+invoca o python do PATH, sem configuração de ambiente virtual. No PATH
+padrão desta sessão falhou em cv2; apontando o PATH para o ambiente com
+OpenCV, falhou no pacote interno table_reading. São problemas distintos.
+
+Implementar: contrato único e versionado de CLI/API, seleção explícita do
+interpretador e caminhos, entrada validada e testes de integração. Preservar
+dry-run e autorização explícita; não corrigir integração armando em silêncio.
+
+P1-03 — PAINEL ANUNCIA SESSÃO ATIVA APÓS FALHA DO AGENTE
+Fontes: server.ts:135-200, src/App.tsx:128-151.
+
+A API responde success/running antes de confirmar que o Python inicializou.
+O frontend não consulta /api/bot/status nem recebe eventos de mudança.
+
+Reprodução com dependências numéricas instaladas:
+- clicar Iniciar Sessão;
+- processo falha com table_reading ausente, saída 1;
+- backend informa running=false;
+- página continua exibindo Sessão Ativa.
+
+Implementar: estados iniciando/pronto/parado/falha, handshake do agente,
+sincronização contínua e confirmação de parada do processo correto. Abrir
+um processo não comprova leitura de uma mesa nem prontidão estratégica.
+
+P1-04 — DOIS LIMPS E OPEN + DOIS CALLS AINDA USAM REFERÊNCIA INADEQUADA
+Fontes: python_bot/preflop_advisor.py:99-145 e 385-483;
+python_bot/action_executor.py:46-69; operar_mesa.py:289-303.
+
+As sondas usam packs sintéticos dos testes versionados, sem afirmar que
+seus ranges são corretos em poker. Elas verificam a seleção de contexto:
+
+- Dois limpers: infer_live_spot retorna first_in; o advisor consulta
+  open_raise e acrescenta LIMPERS_PRESENT_OPEN_AS_ISO_APPROX.
+- Open mais dois calls: identifica callers=2, mas consulta o nó vs_open
+  contra o abridor, acrescentando MULTIWAY_2_CALLERS_APPROX_VS_OPEN.
+- Ambos mantêm validated=True quando o nó original é validado, embora
+  aquele nó não valide o contexto aproximado.
+- O conselho declara execution_allowed=False. Entretanto, extraindo e
+  executando somente o método puro _eligible, o CALL multiway aproximado
+  recebe elegibilidade True. O método usa validated e não bloqueia esse
+  caveat. O caminho de raise também usa validated como autorização.
+
+Isso não prova que houve clique real; demonstra conflito de contrato que
+pode liberar aproximações quando o restante estiver armado/integrado.
+
+Implementar: separar validade da fonte e cobertura do contexto; preservar
+limpers/callers e sequência/tamanhos reais. Aproximação deve bloquear
+execução por uma política central, não somente acrescentar texto ao log.
+Esses dois spots continuam sendo prioridade estratégica do projeto.
+
+P1-05 — PROVENIÊNCIA E RESOLUÇÃO DE COLISÕES NÃO FORAM PRESERVADAS
+Fonte: python_bot/preflop_advisor.py:208-246.
+
+A versão importada não contém manifest() nem os hashes e registros de
+colisão existentes em Software/4687e68. O índice usa setdefault: para duas
+fontes com a mesma chave, a primeira vence sem diagnóstico.
+
+Sonda: dois nós sintéticos com a mesma chave e ações diferentes. Inverter
+a ordem muda o resultado de raise para fold; ambos permanecem validados.
+Não é uma prova sobre EV, mas uma prova de dependência silenciosa da ordem.
+
+Além disso, nenhum pack HRC/NVT acompanha este checkout. DEFAULT_RANGES
+aponta para um caminho C:\Meus Projetos\Aplicativos\... fora do repositório;
+o painel não permite identificar/hash/configurar o arquivo efetivamente usado.
+
+Implementar: recuperar proveniência, política explícita de colisão e
+manifesto de cobertura. Só então validar com o pack real usado no Windows.
+Não foi possível verificar esse pack local do usuário nesta auditoria.
+
+P1-06 — MOTORES WEB E PYTHON CONTINUAM SENDO DOIS CÉREBROS DIFERENTES
+Fontes: src/utils/*Engine.ts e python_bot/*advisor.py.
+
+Os motores web não mudaram nesta atualização. Eles continuam calculando
+ranges/equidade por pontuações e categorias, sem consultar o Python/packs.
+Mudar o perfil ou o spot do laboratório não configura a estratégia do agente.
+
+Reproduções web repetidas nesta revisão:
+- BB 72o em RFI => CALL de 1.3 BB, sem aumento a pagar;
+- AA vs 3-bet, stack 40 BB e open-base 6 => valor 43.2 BB, texto all-in 40;
+- AA vs open, stack 40 e open 6 => valor 18 BB, texto all-in 40;
+- mão inválida => fallback silencioso para AKs;
+- mudar open de 2 para 6 BB não altera nenhuma das 169 ações;
+- RNG manda mixar Check enquanto a saída continua C-BET BLEFE de 2.1 BB;
+- plano geométrico pode propor apostar depois de uma decisão FOLD.
+
+Implementar: uma fonte de decisão e um contrato compartilhado. O laboratório
+deve exibir a mesma decisão, contexto e origem que o agente usaria, com
+invariantes de ação/valor/rótulo e abstenção em entradas desconhecidas.
+
+P1-07 — TORNEIOS: CÓDIGO DE SUPERVISÃO EXISTE, MAS A ROTA NÃO O USA
+Fontes: server.ts:203-228, python_bot/tournament_rotina.py:17-36,
+registration_flow.py e registration_ledger.py.
+
+Foram importados módulos úteis de ledger, política de sessão e máquina de
+estados supervisionada, com testes. Porém, a rota nova executa outro script,
+tournament_rotina.py, que apenas imprime mensagens e faz pausas. Não consulta
+saldo, torneio real, política de buy-in, estado do lobby ou confirmação.
+
+Reprodução: POST /api/bot/register-tournaments com minBankroll=-10 retorna
+success=True; o processo imprime validação de -10 buy-ins e inscrição
+concluída. Não houve inscrição real. A interface nem chama essa rota.
+
+Implementar: conectar o fluxo supervisionado e o ledger, validar os dados
+reais e só registrar sucesso após evidência. Manter confirmação específica
+do operador onde o fluxo prevê custo; não trocar a supervisão por log de sucesso.
+
+P1-08 — MÓDULOS ALTERNATIVOS DE OCR/BRIDGE NÃO FORMAM UM CAMINHO FUNCIONAL
+Fontes: python_bot/modules/engine_bridge.py:18-22,
+ocr_processor.py:55-106 e mouse_controller.py:24.
+
+EngineBridge importa OCRProcessor e MouseController, mas os arquivos
+exportam PPPokerOCRProcessor e RealMouseController. A primeira importação
+já falha. O operador principal não usa esse bridge, portanto ele também
+não supre os pacotes de leitura ausentes.
+
+Sondas estritamente sintéticas do OCR alternativo:
+- imagem preta 80x80 => status=success e cards_read=True, sem ler cartas;
+- backend simulado com IsWindow=False => captura tentada no retângulo fixo
+  left=100, top=100, width=800, height=600, em vez de abster.
+
+Implementar: escolher o caminho canônico, corrigir as interfaces e falhar
+com diagnóstico em janela inválida. Pré-processar pixels não comprova leitura.
+Nenhuma captura real de desktop foi feita nessas sondas.
+
+P1-09 — ROTAS DE PROCESSO COM INPUT EM SHELL E SEM AUTENTICAÇÃO
+Fontes: server.ts:135-151, 203-211 e 342.
+
+O servidor escuta em 0.0.0.0. As rotas de início/parada/registro não exigem
+autenticação; hwnd e minBankroll recebidos da requisição são convertidos
+para texto e passados a spawn com shell:true. Sem validação/escape, há
+risco de execução de comandos pela interpretação do shell. O próprio Node
+emitiu DEP0190 durante o teste normal. Não executei payload de exploração.
+
+Implementar antes de expor o painel em rede: spawn sem shell, argumentos
+tipados/validados, autenticação e controle de origem/acesso compatíveis
+com operação local. Não confundir processo iniciado com agente autenticado.
+
+OUTROS ACHADOS QUE PERMANECEM
+
+- handParser.ts não mudou. As linhas Seat após SUMMARY ainda duplicam
+  jogadores e sobrescrevem stacks com zero. A coleta aumenta o stack sem
+  reduzir o “Pote Atual”. Decimal com vírgula pode ser multiplicado por 100.
+  Os resultados completos estão em web-probes.json.
+- Bankroll permanece em memória, com dados iniciais de demonstração.
+  EV zero/ausente pode ser substituído pelo lucro devido ao uso de ||.
+- Análise Gemini permanece sem validação independente por solver, com
+  histórico completo e sem recorte de informação disponível por decisão.
+  Não foi chamada nesta auditoria. Build passando não valida esse serviço.
+- O manual não mudou e ainda descreve capacidades/latências/fluxos como
+  validados sem evidências correspondentes. Promessas de indetectabilidade
+  não são sustentadas por esta auditoria e devem ser retiradas.
+
+LEITURA ANTECIPADA E ESTADO DA MÃO
+
+Há progresso parcial no código incorporado:
+- operar_mesa chama advise_table para cada crop antes de decidir execução;
+- existe hero_cache por mesa/mão, além de cache de HUD/bounty;
+- existem tracker de agressor, estabilizador de posição, StateObserver e
+  um observador contínuo passivo.
+
+Isso é infraestrutura útil, mas ainda não está validada no checkout completo:
+faltam os leitores importados; o operador não instancia StateObserver nem
+uma reconstrução completa e autoritativa do histórico de ações. Cache de
+cartas não equivale a cache de decisão válido para toda a mão.
+
+O loop visita um HWND por ciclo, em round-robin, intervalo padrão de 1 s.
+Com seis HWNDs e sem alterar esse padrão, a volta até a mesma janela pode
+ficar na ordem de seis segundos, ou mais se o processamento exceder o
+intervalo. Isso é dedução da cadência do código, NÃO benchmark medido de
+PPPoker; várias mesas no mesmo HWND seguem outro arranjo de crops.
+
+Não há evidência de escala para seis/doze/dezesseis mesas com prazos
+concorrentes. O caminho não tem uma fila de decisões por prazo da mesa;
+deadlines locais do controlador não resolvem sozinhos o escalonamento.
+
+Implementar: observação passiva contínua; estado versionado e invalidado
+por eventos; preparação de decisões antes da vez; revalidação ao agir;
+fila por urgência e métricas p50/p95/p99 por etapa, incluindo timeouts,
+decisões vencidas e ações duplicadas. Preparação de fold não autoriza
+auto-fold sem considerar check gratuito, blinds, preço e mudança de ação.
+
+PRESETS E TAMANHOS DE APOSTA
+
+Melhorou: raise_panel.py lê multiplicadores e RaiseSequencer tem um fluxo
+de aumento com conferência. map_multiplier_to_preset pode abster quando
+nenhum preset está perto; isso é mais seguro que escolher sempre o mais próximo.
+
+Limites atuais:
+- os testes desse caminho não carregaram, por falta de table_reading;
+- a tolerância é max(0.5x, 20% do alvo), aproximação que não comprova que
+  o range estudado continua correto no tamanho selecionado;
+- não há validação real dos presets do PPPoker nesta revisão;
+- pós-flop é bloqueado para execução, portanto os presets de 1/3, 1/2,
+  2/3 e pote ainda não formam um fluxo pós-flop operacional homologado;
+- presets visuais do laboratório não são comandos de size do cliente.
+
+Implementar: políticas estudadas com os próprios tamanhos discretos do
+cliente; equivalência entre valor total/adicional/fração/all-in; conferência
+do tamanho antes e depois da seleção e abstenção quando não houver opção
+compatível. Validar primeiro em ambiente controlado, com o agente passivo.
+
+PÓS-FLOP: O QUE REALMENTE EVOLUIU
+
+O Python importado recebe cartas e board reais como entrada de funções,
+avalia mãos, draws e equidade contra ranges em alguns contextos. É avanço
+em relação ao simulador fixo e ao laboratório web por categorias.
+
+Porém, regras e equidade de showdown não são uma política resolvida de
+flop/turn/river. O rastreamento é parcial, a distribuição do vilão nem
+sempre é atualizada por toda a linha e há cenários sem cobertura. O operador
+explicitamente não executa pós-flop: preservo isso como limitação honesta.
+Não existe evidência de que a migração tenha criado um jogador GTO completo.
+
+Usar Hand2Note para montar casos reais deduplicados, com heroes explícitos,
+parser consistente e informação disponível apenas até cada decisão. Usar
+referências independentes adequadas a cada street/árvore para julgar as
+decisões. Ganhar a mão ou concordar com um texto de IA não é critério de acerto.
+
+ORDEM DE CORREÇÃO E CRITÉRIOS DE ACEITE
+
+1. Concluir migração e instalação.
+   Fontes/recursos/dependências completos; agente e --help iniciam em
+   instalação limpa; todos os módulos de teste conseguem importar.
+2. Unificar CLI, API e estados operacionais.
+   Interpretador e ranges explícitos; painel reflete falha/prontidão;
+   nenhum sucesso baseado só em spawn. Endpoints protegidos, sem shell.
+3. Unificar contexto estratégico e autorização.
+   Dois limps e open + dois calls não herdam validade de um nó de outro
+   contexto. Aproximações não chegam ao cursor. Origem e colisões auditáveis.
+4. Fazer o painel consumir o mesmo núcleo e corrigir invariantes.
+   Sem duplicidade de cérebro, cartas substitutas, sizes acima do stack,
+   RNG divergente ou importação de histórico que altera fichas silenciosamente.
+5. Conectar observação/antecipação/presets e fluxo supervisionado de lobby.
+   Validar passivamente no Windows; medir capacidade antes de ampliar mesas.
+
+Não há aprovação de seis mesas ou mais nem de operação real nesta entrega.
+O ambiente antigo deve continuar preservado até a nova distribuição passar
+por instalação limpa, regressão e validação controlada no Windows/PPPoker.
+
+EVIDÊNCIAS E REPRODUÇÃO
+
+Esta entrega inclui relatório TXT, summary.json, python-suite.log,
+python_probes.py/python-probes.json, web_probes.ts/web-probes.json,
+ocr_probes.py/ocr-probes.json, browser_check.py e resultados do navegador,
+tournament-api.json, logs de Bun/TypeScript/build e diffs selecionados com
+Software/4687e68. Dados dos probes de estratégia e OCR são sintéticos.
+
+Na raiz do repositório, usando Python com numpy/OpenCV e as dependências
+de laboratório instaladas:
+  PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s python_bot -p 'test_*.py'
+  PYTHONDONTWRITEBYTECODE=1 python docs/audits/2026-11-13-82080b9/python_probes.py
+  PYTHONDONTWRITEBYTECODE=1 python docs/audits/2026-11-13-82080b9/ocr_probes.py
+  ./node_modules/.bin/tsx docs/audits/2026-11-13-82080b9/web_probes.ts
+
+Com servidor local já iniciado, browser_check.py usa Playwright/Chromium.
+Por padrão ele apenas navega. AUDIT_START_BROKEN_AGENT=1 habilita a reprodução
+do start SOMENTE nesta versão conhecida, sem --arm, que falha nos imports.
+Não reutilizar essa opção sem revisar o novo caminho de execução.
+
+As sondas imprimem comportamento observado. Sair com código zero não é
+atestado de aprovação estratégica; critérios e falhas estão neste relatório.
+Todos os resultados Windows desta entrega são revisão de código ou mocks,
+nunca uma sessão real de captura/execução no PPPoker.

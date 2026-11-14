@@ -1,0 +1,19 @@
+{
+  "blank_frame_result": {
+    "status": "success",
+    "timestamp": 1794586904.1164887,
+    "hwnd": "unused",
+    "frame_shape": [
+      80,
+      80,
+      3
+    ],
+    "cards_read": true
+  },
+  "invalid_window_capture_region": {
+    "left": 100,
+    "top": 100,
+    "width": 800,
+    "height": 600
+  }
+}

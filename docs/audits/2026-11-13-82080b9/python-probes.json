@@ -1,0 +1,132 @@
+{
+  "two_limpers": {
+    "classification": {
+      "spot": "first_in",
+      "opener": null
+    },
+    "advice": {
+      "status": "ADVICE",
+      "spot": "open_raise",
+      "node_id": "n1",
+      "recommended": "raise",
+      "validated": true,
+      "execution_allowed": false,
+      "caveats": [
+        "EXPLORATORY_NOT_FOR_EXECUTION",
+        "NVT_REFERENCE_SHORT_STACK_ONLY",
+        "LIMPERS_PRESENT_OPEN_AS_ISO_APPROX"
+      ]
+    }
+  },
+  "open_two_callers": {
+    "classification": {
+      "spot": "vs_open",
+      "opener": "UTG",
+      "callers": 2
+    },
+    "advice": {
+      "status": "ADVICE",
+      "spot": "vs_open",
+      "node_id": "vo",
+      "recommended": "call",
+      "validated": true,
+      "execution_allowed": false,
+      "caveats": [
+        "EXPLORATORY_NOT_FOR_EXECUTION",
+        "NVT_REFERENCE_SHORT_STACK_ONLY",
+        "AGGRESSOR_INFERRED_UTG",
+        "MULTIWAY_2_CALLERS_APPROX_VS_OPEN"
+      ]
+    },
+    "isolated_call_eligibility": [
+      true,
+      null
+    ]
+  },
+  "duplicate_key_source_order": {
+    "first": {
+      "status": "ADVICE",
+      "spot": "open_raise",
+      "node_id": "n1",
+      "recommended": "raise",
+      "validated": true,
+      "execution_allowed": false,
+      "caveats": [
+        "EXPLORATORY_NOT_FOR_EXECUTION",
+        "NVT_REFERENCE_SHORT_STACK_ONLY"
+      ]
+    },
+    "reversed": {
+      "status": "ADVICE",
+      "spot": "open_raise",
+      "node_id": "same_key_second_source",
+      "recommended": "fold",
+      "validated": true,
+      "execution_allowed": false,
+      "caveats": [
+        "EXPLORATORY_NOT_FOR_EXECUTION",
+        "NVT_REFERENCE_SHORT_STACK_ONLY"
+      ]
+    },
+    "has_manifest": false
+  },
+  "launcher_parser": [
+    {
+      "argv": [
+        "--hwnd",
+        "0x12FA,",
+        "0x34BC",
+        "--bounty-bb",
+        "--overlay",
+        "--human-mouse"
+      ],
+      "exit": 2,
+      "error": "python_probes.py: error: argument --hwnd: invalid <lambda> value: '0x12FA,'"
+    },
+    {
+      "argv": [
+        "--hwnd",
+        "0x12FA",
+        "0x34BC",
+        "--bounty-bb",
+        "--overlay",
+        "--human-mouse"
+      ],
+      "exit": 2,
+      "error": "python_probes.py: error: argument --bounty-bb: expected one argument"
+    },
+    {
+      "argv": [
+        "--hwnd",
+        "0x12FA",
+        "0x34BC",
+        "--bounty-bb",
+        "1",
+        "--overlay",
+        "--human-mouse"
+      ],
+      "exit": 2,
+      "error": "python_probes.py: error: unrecognized arguments: --overlay --human-mouse"
+    },
+    {
+      "argv": [
+        "--hwnd",
+        "0x12FA",
+        "0x34BC",
+        "--bounty-bb",
+        "1",
+        "--human-mouse"
+      ],
+      "exit": 2,
+      "error": "python_probes.py: error: unrecognized arguments: --human-mouse"
+    }
+  ],
+  "startup_help": {
+    "exit": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/workspace/work/visualpilot2-audit-82080b9/python_bot/operar_mesa.py\", line 19, in <module>\n    from table_reading.pipeline import configure_ocr\nModuleNotFoundError: No module named 'table_reading'"
+  },
+  "engine_bridge": {
+    "exit": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/workspace/work/visualpilot2-audit-82080b9/python_bot/modules/engine_bridge.py\", line 18, in <module>\n    from modules.ocr_processor import OCRProcessor\nImportError: cannot import name 'OCRProcessor' from 'modules.ocr_processor' (/workspace/work/visualpilot2-audit-82080b9/python_bot/modules/ocr_processor.py)\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/workspace/work/visualpilot2-audit-82080b9/python_bot/modules/engine_bridge.py\", line 21, in <module>\n    from ocr_processor import OCRProcessor\nImportError: cannot import name 'OCRProcessor' from 'ocr_processor' (/workspace/work/visualpilot2-audit-82080b9/python_bot/modules/ocr_processor.py)"
+  }
+}

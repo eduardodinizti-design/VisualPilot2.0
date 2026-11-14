@@ -1,0 +1,19 @@
+{
+  "registration_request": {
+    "minBankroll": -10
+  },
+  "response": {
+    "success": true,
+    "message": "Rotina de torneios e bankroll iniciada com sucesso."
+  },
+  "logs": [
+    "[4:20:48 PM] [Tourney] ==================================================\n   VISUALPILOT 2.0 — ROTINA DE TORNEIOS & BANKROLL\n   Liga Evolution & Clube do Carecas\n==================================================\n[ROTINA] Conectando ao lobby do PPPoker (Verificação de Bankroll: True)...\n[ROTINA] Validando requisito mínimo de -10 buy-ins para MTT/PKO...\n[ROTINA] Analisando grade de torneios (Deepstack, Progressive KO, Turbo)...\n[ROTINA] Executando registro automático e posicionamento de janelas de mesas...\n[ROTINA] Rotina de inscrição concluída com sucesso. Pronto para acionar operar_mesa.py.",
+    "[4:20:45 PM] [STOP] Processo python encerrado (código 1).",
+    "[4:20:45 PM] [ERR] import cv2\nModuleNotFoundError: No module named 'cv2'",
+    "[4:20:45 PM] [ERR] Traceback (most recent call last):\n  File \"/workspace/work/visualpilot2-audit-82080b9/python_bot/operar_mesa.py\", line 17, in <module>",
+    "[4:20:45 PM] [START] Iniciando python /workspace/work/visualpilot2-audit-82080b9/python_bot/operar_mesa.py --hwnd 0x12FA, 0x34BC --bounty-bb --overlay --human-mouse",
+    "[4:20:45 PM] [TOURNAMENT] Iniciando rotina python tournament_rotina.py",
+    "[INIT] Servidor Express e ponte Python inicializados.",
+    "[BRIDGE] Aguardando comando para iniciar operar_mesa.py."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "initial_http_ok": true,
+  "ui_active_after_process_failure": true,
+  "backend_status": {
+    "running": false,
+    "logs": [
+      "[4:21:44 PM] [STOP] Processo python encerrado (código 1).",
+      "[4:21:44 PM] [ERR] Traceback (most recent call last):\n  File \"/workspace/work/visualpilot2-audit-82080b9/python_bot/operar_mesa.py\", line 19, in <module>\n    from table_reading.pipeline import configure_ocr\nModuleNotFoundError: No module named 'table_reading'",
+      "[4:21:44 PM] [START] Iniciando python /workspace/work/visualpilot2-audit-82080b9/python_bot/operar_mesa.py --hwnd 0x12FA, 0x34BC --bounty-bb --overlay --human-mouse",
+      "[INIT] Servidor Express e ponte Python inicializados.",
+      "[BRIDGE] Aguardando comando para iniciar operar_mesa.py."
+    ]
+  },
+  "preflop_opened": true,
+  "postflop_opened": true,
+  "analysis_opened": true,
+  "sample_replayer_opened": true,
+  "page_errors": []
+}

@@ -1,0 +1,22 @@
+{
+  "commit": "82080b948c18b3a78beb4716f1434e72f9516ca8",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "interpreter": "/workspace/work/visualpilot-audit-venv/bin/python",
+  "python_files_syntax_checked": 117,
+  "syntax_errors": [],
+  "unittest_entries": 435,
+  "passed": 388,
+  "import_errors": 41,
+  "skipped": 6,
+  "missing_module_errors": {
+    "No module named 'table_reading'": 40,
+    "No module named 'table_discovery'": 1
+  },
+  "scope": "isolated checkout; existing audit venv; Linux; no old repository on PYTHONPATH",
+  "dependency_versions": {
+    "numpy": "2.2.6",
+    "opencv-python": "4.11.0.86",
+    "psutil": "6.1.1",
+    "mss": "not installed"
+  }
+}
